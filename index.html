@@ -303,7 +303,7 @@
     text-decoration:underline; text-underline-offset:5px}
 
   /* ═══ keepsake itinerary (off-screen, 840 × 1188 = A-series ratio) ═══ */
-  #keep{position:fixed; left:-10000px; top:0; width:840px; height:1188px; background:var(--light); color:var(--dark);
+  #keep{position:fixed; left:-10000px; top:0; width:840px; min-height:1188px; background:var(--light); color:var(--dark);
     font-family:var(--hand); text-align:center; display:flex; flex-direction:column; font-variant-numeric:lining-nums}
   #keep .k-top{background:var(--dark); color:var(--light); padding:56px 40px 46px}
   #keep .k-top img{width:92px; display:block; margin:0 auto 22px}
@@ -369,9 +369,15 @@
   .foot-names{line-height:0; padding:0 24px}
   .foot-names img{width:min(70vw,360px); height:auto}
   footer .caps{opacity:.85; font-size:14px}
-  #keep .k-top img{width:300px}
-  #keep .k-names{font-size:52px; letter-spacing:.08em}
-  #keep .k-guests{font-family:var(--hand); font-size:40px}
+  #keep .k-top img{width:240px; margin-bottom:16px}
+  #keep .k-top{padding:40px 40px 34px}
+  #keep .k-body{padding:34px 80px 34px}
+  #keep .k-ev{padding:20px 0}
+  #keep .k-ev:first-child{margin-top:18px}
+  #keep .k-ev .ad span{border-bottom:0; text-decoration:none}
+  #keep .k-ev .ad{font-size:17px}
+  #keep .k-names{font-size:48px; letter-spacing:.08em}
+  #keep .k-guests{font-family:var(--hand); font-size:34px; line-height:1.25}
   #keep .k-ev .n{font-family:var(--hand); font-size:40px}
   #keep .k-ev .d, #keep .k-ev .m, #keep .k-for, #keep .k-url, #keep .k-when{font-family:var(--hand); letter-spacing:.16em}
   #keep .k-body, #keep .k-foot, #keep .k-ev .ad, #keep .k-ev .dr, #keep .k-ev .who{font-family:var(--body)}
@@ -587,7 +593,7 @@
     <p class="k-guests" id="k-guests"></p>
     <div id="k-events"></div>
     <div class="k-foot">
-      <p id="k-stay">[OPTIONAL FOOTER LINE, e.g. hotel booking reminder]</p>
+      <p id="k-stay">Any questions? Message Ottilie or Abhi.</p>
       <p class="k-url">ottandabhi.co.uk</p>
     </div>
   </div>
@@ -896,16 +902,19 @@
     var attendees = current.guests.filter(function(g){
       return evs(g).some(function(ev){ return g[ev] === true; });
     });
-    $("k-guests").textContent = attendees.map(fullName).join(" & ");
+    var first = attendees.map(function(g){ return g.first_name; });
+    $("k-guests").textContent = first.length < 2 ? first.join("") : first.slice(0, -1).join(", ") + " & " + first[first.length - 1];
+    // only print the day on each event if the events fall on more than one day
+    var manyDays = byOrder(Object.keys(going)).map(function(ev){ return EVENTS[ev].day; }).filter(function(d, i, a){ return a.indexOf(d) === i; }).length > 1;
     var html = "";
     byOrder(Object.keys(going)).forEach(function(ev){
       var e = EVENTS[ev];
       var num = function(t){ return t.replace(/[0-9]+/g, '<span class="num">$&</span>'); };
-      html += '<div class="k-ev"><p class="d">' + num(e.day) + "</p><p class=\"n\">" + e.name + "</p>" +
+      html += '<div class="k-ev">' + (manyDays ? '<p class="d">' + num(e.day) + "</p>" : "") + "<p class=\"n\">" + e.name + "</p>" +
         '<p class="m">' + num(e.time) + " · " + esc(e.venue) + "</p>" +
-        (e.address ? '<p class="ad"' + (e.map_url ? ' data-map="' + esc(e.map_url) + '"' : "") + "><span>" + num(esc(e.address)) + (e.map_url ? " · View map" : "") + "</span></p>" : "") +
+        (e.address ? '<p class="ad"' + (e.map_url ? ' data-map="' + esc(e.map_url) + '"' : "") + "><span>" + esc(e.address) + (e.map_url ? " · View map" : "") + "</span></p>" : "") +
         '<p class="dr">Dress code: ' + e.dress + "</p>" +
-        (attendees.length > 1 && going[ev].length < attendees.length ? '<p class="who">' + esc(going[ev].join(" & ")) + " attending</p>" : "") +
+        (attendees.length > 1 && going[ev].length < attendees.length ? '<p class="who">' + esc(going[ev].length < 2 ? going[ev].join("") : going[ev].slice(0, -1).join(", ") + " & " + going[ev][going[ev].length - 1]) + " attending</p>" : "") +
         "</div>";
     });
     $("k-events").innerHTML = html;
@@ -917,8 +926,10 @@
     ]).then(function(){ return document.fonts.ready; })
       .then(function(){ return html2canvas($("keep"), { scale: 2, backgroundColor: "#F6F3EC", logging: false }); })
       .then(function(canvas){
-        var pdf = new window.jspdf.jsPDF({ unit: "mm", format: "a4" });
-        pdf.addImage(canvas.toDataURL("image/jpeg", 0.92), "JPEG", 0, 0, 210, 297);
+        // A4 when it fits; if a long invitation runs over, the page grows instead of cutting it off
+        var h = 210 * canvas.height / canvas.width;
+        var pdf = new window.jspdf.jsPDF({ unit: "mm", format: h <= 297.5 ? "a4" : [210, h] });
+        pdf.addImage(canvas.toDataURL("image/jpeg", 0.92), "JPEG", 0, 0, 210, Math.max(h, 297));
         // make each address line a clickable Google Maps link (840px card → 210mm page)
         var k = $("keep").getBoundingClientRect(), mm = 210 / k.width;
         $("keep").querySelectorAll("[data-map]").forEach(function(el){
