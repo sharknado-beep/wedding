@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#F6F3EC">
-<!-- ✏️ Replace every [PLACEHOLDER] below. Share-preview tags are what WhatsApp/iMessage show. -->
+<!-- Share-preview tags: what WhatsApp/iMessage show when the link is sent. -->
 <meta name="description" content="Ottilie & Abhi · Combe Down, Bath, 22 May 2027. Unlock your invite to RSVP and see your schedule.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ottilie & Abhi">
@@ -154,10 +154,11 @@
   .rule-t::before,.rule-t::after{content:""; flex:1; max-width:120px; height:1px; background:var(--hair)}
   .event{margin-top:40px}
   .event h3{font-family:var(--hand); font-style:normal; font-weight:300; font-size:clamp(32px,7.6vw,42px); line-height:1.15}
-  .event .meta{color:var(--soft); margin-top:6px}
+  .event .meta{color:var(--ink); margin-top:8px; font-size:17px; letter-spacing:.1em}
   .event .meta a{color:inherit; text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px}
-  .event .desc{max-width:460px; margin:14px auto 0}
-  .event .dress{margin-top:14px; font-style:normal}
+  .event .desc{max-width:460px; margin:14px auto 0; white-space:pre-line}
+  .event .dress{margin-top:16px; font-style:normal}
+  .event .times{max-width:460px; margin:16px auto 0; white-space:pre-line; font-size:19px; line-height:1.5}
   .event .dress .caps{font-style:normal; font-size:10px; color:var(--soft); display:block; margin-bottom:2px}
   .event + .event{padding-top:40px; border-top:1px solid var(--hair); max-width:460px; margin-left:auto; margin-right:auto}
 
@@ -320,7 +321,7 @@
   #keep .k-ev .m{font-size:15px; letter-spacing:.24em; text-transform:uppercase; margin-top:4px}
   #keep .k-ev .ad{font-size:18px; margin-top:4px}
   #keep .k-ev .ad span{display:inline-block; border-bottom:1px solid currentColor; padding-bottom:1px; line-height:1.3}
-  #keep .k-ev .dr{font-style:normal; font-size:21px; margin-top:8px}
+  #keep .k-ev .dr{font-style:normal; font-size:18px; margin-top:8px}
   #keep .k-ev .who{font-size:16px; color:var(--soft); margin-top:4px}
   #keep .num{font-family:inherit}
   #keep .k-foot{margin-top:auto; border-top:1px solid var(--hair); padding-top:24px; font-size:19px}
@@ -369,10 +370,10 @@
   .foot-names{line-height:0; padding:0 24px}
   .foot-names img{width:min(70vw,360px); height:auto}
   footer .caps{opacity:.85; font-size:14px}
-  #keep .k-top img{width:240px; margin-bottom:16px}
-  #keep .k-top{padding:40px 40px 34px}
-  #keep .k-body{padding:34px 80px 34px}
-  #keep .k-ev{padding:20px 0}
+  #keep .k-top img{width:190px; margin-bottom:12px}
+  #keep .k-top{padding:30px 40px 26px}
+  #keep .k-body{padding:28px 80px 28px}
+  #keep .k-ev{padding:16px 0}
   #keep .k-ev:first-child{margin-top:18px}
   #keep .k-ev .ad span{border-bottom:0; text-decoration:none}
   #keep .k-ev .ad{font-size:17px}
@@ -381,6 +382,13 @@
   #keep .k-ev .n{font-family:var(--hand); font-size:40px}
   #keep .k-ev .d, #keep .k-ev .m, #keep .k-for, #keep .k-url, #keep .k-when{font-family:var(--hand); letter-spacing:.16em}
   #keep .k-body, #keep .k-foot, #keep .k-ev .ad, #keep .k-ev .dr, #keep .k-ev .who{font-family:var(--body)}
+  .us{margin:0 auto 40px; max-width:300px; padding:12px 12px 14px; background:var(--light); transform:rotate(-2deg);
+    box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .us img{display:block; width:100%; height:auto}
+  @media(min-width:820px){.us{max-width:340px}}
+  #keep .k-ev .ds{font-family:var(--body); font-size:19px; line-height:1.45; margin:10px auto 0; max-width:600px; white-space:pre-line; color:var(--dark)}
+  #keep .k-ev .m{font-size:17px}
+
 </style>
 </head>
 <body class="locked">
@@ -411,13 +419,15 @@
   </header>
   <div class="checks" aria-hidden="true"></div>
 
-  <div class="welcome dark">
+  <div class="welcome dark" data-gated>
     <div class="wrap">
-      <p class="body">[YOUR WELCOME MESSAGE. One or two short paragraphs: who you are, where the
-      wedding is, and how excited you are that guests are coming.]</p>
-      <p class="body">[A SECOND, OPTIONAL PARAGRAPH.]</p>
+      <figure class="us"><img data-src="photos/ott-abhi.jpg" alt="Ottilie and Abhi" width="800" height="1000"></figure>
+      <p class="body">We&rsquo;re so happy you&rsquo;ll be joining us in Combe Down. We&rsquo;ll be married
+      at the village church, then celebrate in the garden at the family home with good food, drinks and
+      the people we love most.</p>
+      <p class="body">We can&rsquo;t wait to see you there.</p>
       <p class="body" style="margin-top:22px">With love,</p>
-      <p class="sig">Ottilie &amp; Abhi</p>
+      <p class="sig">Ott &amp; Abhi</p>
 
     </div>
   </div>
@@ -436,8 +446,10 @@
     </ol>
 
     <form id="r-find" autocomplete="off" novalidate>
-      <p class="rintro">Find your invitation to reply. It also unlocks your schedule, travel
-      details and FAQs. Enter your full name as it appears on your invitation.</p>
+      <p class="rintro">Enter the password from your invitation, then your full name as it appears
+      on it. This unlocks your schedule, travel details and FAQs.</p>
+      <label class="field" id="r-pw-field"><span class="caps">Password · from your invitation</span>
+        <input id="r-pw" type="password" autocomplete="off" autocapitalize="none" spellcheck="false"></label>
       <label class="field"><span class="caps">Your full name</span>
         <input id="r-q" type="text" placeholder="e.g. Jane Example" autocapitalize="words" spellcheck="false" enterkeyhint="search"></label>
       <button class="btn" type="submit">Find my invitation</button>
@@ -450,7 +462,7 @@
       <p class="rintro" id="r-lead"></p>
       <div id="r-guests"></div>
       <label class="field"><span class="caps">A note for us · optional</span>
-        <textarea id="r-msg" maxlength="1000" placeholder="Arrival dates, questions, song requests…"></textarea></label>
+        <textarea id="r-msg" maxlength="1000" placeholder="Questions, song requests, anything else…"></textarea></label>
       <p class="rcount" id="r-count" aria-live="polite"></p>
       <button class="btn" type="submit" id="r-send">Send our reply</button>
       <p class="rnote" id="r-form-note" aria-live="polite"></p>
@@ -503,38 +515,26 @@
     <div class="grid">
       <div class="blk">
         <h3>Getting here</h3>
-        <p>[Nearest airport, and how long it takes to get into town by car / train.]</p>
+        <p>From London, the easiest way is the train from <strong>Paddington to Bath Spa</strong>, then a
+        10-minute taxi or Uber up to Combe Down.</p>
       </div>
       <div class="blk">
-        <h3>Getting around</h3>
-        <p>[Best way to get around, e.g. a ride-hailing app with a download link.]</p>
+        <h3>On the day</h3>
+        <p>The church and the house are both on Church Road, so after the ceremony we&rsquo;ll all walk
+        to The Garth together. It&rsquo;s 6 to 8 minutes on foot.</p>
       </div>
       <div class="blk wide">
         <h3>Where to stay</h3>
-        <p>[Where guests could stay. If you've negotiated a hotel rate, say so and link the hotel:
-        <a href="[HOTEL_MAP_LINK]" target="_blank" rel="noopener"><strong>[HOTEL_NAME]</strong></a>.]</p>
-        <div class="rates">
-          <div><span>[Room type 1]</span><span>[PRICE]</span></div>
-          <div><span>[Room type 2]</span><span>[PRICE]</span></div>
-        </div>
-        <p class="rates-note">[Per room, per night · any small print]</p>
-        <p>[How to book, e.g. "get in touch with [HOST_NAME]".]</p>
-      </div>
-      <div class="blk wide">
-        <h3>Coming from abroad?</h3>
-        <ol>
-          <li><strong>Check your passport:</strong> [validity rules].</li>
-          <li><strong>Visas and travel permits:</strong> [who needs one, and where to apply. Link only to official GOV.UK pages].</li>
-        </ol>
+        <p>The <strong>King William</strong> pub has a small number of rooms and is the closest place to
+        stay, within walking distance of both venues.</p>
+        <p>Otherwise there are plenty of hotels and Airbnbs in Bath, a short taxi ride away. You don&rsquo;t
+        need to rush, but booking early helps.</p>
       </div>
       <div class="blk wide">
         <h3>The weather</h3>
-        <p>[What the weather will be like and what to pack.]</p>
-        <div class="weather">
-          <div><div class="t">[TEMP]</div><div class="caps">Daytime</div></div>
-          <div><div class="t">[TIME]</div><div class="caps">Sunset</div></div>
-          <div><div class="t">[TEMP]</div><div class="caps">After dark</div></div>
-        </div>
+        <p>Late May in Somerset can be warm or showery. The wedding breakfast is in a marquee, so
+        we&rsquo;ll be covered whatever the weather, but the drinks are in the garden, so bring a layer
+        for the evening.</p>
       </div>
     </div>
   </div>
@@ -557,19 +557,38 @@
       </details>
       <details class="faq">
         <summary>What should I wear?</summary>
-        <div class="a"><p>Each event&rsquo;s dress code is on <a href="#schedule">the schedule</a>.</p></div>
+        <div class="a"><p>For the wedding: smart, so suits and dresses, but not black tie.</p>
+        <p>For the evening drinks: summer smart casual.</p></div>
       </details>
       <details class="faq">
         <summary>Can I bring a plus one?</summary>
         <div class="a"><p>Unfortunately we&rsquo;ve had to keep the numbers tight, so we can only welcome the names on your invitation.</p></div>
       </details>
       <details class="faq">
+        <summary>Are children invited?</summary>
+        <div class="a"><p>Little ones named on your invitation are very welcome.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Can I take photos during the ceremony?</summary>
+        <div class="a"><p>We&rsquo;d love you to be fully present, so please keep phones away during the
+        ceremony. There&rsquo;ll be plenty of time for photos at the house afterwards.</p></div>
+      </details>
+      <details class="faq">
         <summary>Should I bring a gift?</summary>
-        <div class="a"><p>[Your gift note.]</p></div>
+        <div class="a"><p><strong>Your presence at our wedding is the greatest present.</strong> Many of you
+        are travelling and giving up a precious weekend to be with us, and that already means so much.</p>
+        <p>If you&rsquo;d still like to give something, we&rsquo;d be really grateful for a contribution
+        towards our honeymoon. We&rsquo;ll share how closer to the day.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Who do I contact on the day?</summary>
+        <div class="a"><p>We&rsquo;ll have a wedding coordinator looking after everything on the day, so
+        please get in touch with her rather than us. We&rsquo;ll add her name and number here once
+        it&rsquo;s confirmed.</p></div>
       </details>
       <details class="faq">
         <summary>Still got a question?</summary>
-        <div class="a"><p>Get in touch with Ottilie or Abhi.</p></div>
+        <div class="a"><p>Get in touch with either of us, Ott or Abhi.</p></div>
       </details>
     </div>
   </div>
@@ -593,7 +612,7 @@
     <p class="k-guests" id="k-guests"></p>
     <div id="k-events"></div>
     <div class="k-foot">
-      <p id="k-stay">Any questions? Message Ottilie or Abhi.</p>
+      <p id="k-stay">Any questions? Message Ott or Abhi.</p>
       <p class="k-url">ottandabhi.co.uk</p>
     </div>
   </div>
@@ -630,7 +649,14 @@
   }
   function byOrder(keys){ return keys.slice().sort(function(a, b){ return EVENTS[a].sort - EVENTS[b].sort; }); }
   function evs(g){ return byOrder((g.events || []).filter(function(k){ return EVENTS[k]; })); }
-  var STORE = "rsvp-party";
+  var STORE = "rsvp-party", PW_STORE = "rsvp-pw";
+  /* the guest password is checked by the database, never here; once it works we remember it */
+  function guestPw(){ return recall(PW_STORE) || $("r-pw").value.trim(); }
+  function pwKnown(ok){
+    store(PW_STORE, ok ? guestPw() : null);
+    $("r-pw-field").hidden = !!ok;
+    if (!ok) $("r-pw").value = "";
+  }
 
   function $(id){ return document.getElementById(id); }
   function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
@@ -680,10 +706,15 @@
 
   /* ─── schedule: nothing shows until an invitation is found; then only its events ─── */
   var ICONS = [
-    '<circle cx="25" cy="38" r="13"/><circle cx="39" cy="38" r="13"/><path d="M25 25l-4-5 4-5 4 5z"/><path d="M21 20h8"/>',
+    '<circle cx="25" cy="38" r="13"/><circle cx="39" cy="38" r="13"/><path d="M25 25l-4-5 4-5 4 5z"/><path d="M21 20h8"/><path d="M39 25l-4-5 4-5 4 5z"/><path d="M35 20h8"/>',
     '<circle cx="32" cy="36" r="15"/><circle cx="32" cy="36" r="10"/><path d="M10 22v8a3 3 0 0 0 3 3v17M10 22v8M13 22v8M16 22v8a3 3 0 0 1-3 3"/><path d="M53 22c-3 3-3 10 0 12v16"/>',
     '<path d="M13 22h16c0 8-3.6 12-8 12s-8-4-8-12z"/><path d="M21 34v14M15 48h12"/><path d="M35 22h16c0 8-3.6 12-8 12s-8-4-8-12z"/><path d="M43 34v14M37 48h12"/><path d="M32 8v6M26 11l2 3.5M38 11l-2 3.5"/>'
   ];
+  /* an event's description is an intro, a blank line, then its timings */
+  function parts(d){
+    d = d || ""; var i = d.indexOf("\n\n");
+    return i < 0 ? { intro: "", times: d } : { intro: d.slice(0, i), times: d.slice(i + 2) };
+  }
   function renderSchedule(keys){
     var icons = "", days = "", lastDay = null;
     keys.forEach(function(k){
@@ -698,7 +729,8 @@
       days += '<article class="event" data-ev="' + esc(k) + '"><h3>' + esc(e.name) + "</h3>" +
         '<p class="meta caps">' + esc(e.time) + " · " +
           (e.map_url ? '<a href="' + esc(e.map_url) + '" target="_blank" rel="noopener">' + esc(e.venue) + "</a>" : esc(e.venue)) + "</p>" +
-        (e.descr ? '<p class="desc">' + esc(e.descr) + "</p>" : "") +
+        (parts(e.descr).intro ? '<p class="desc">' + esc(parts(e.descr).intro) + "</p>" : "") +
+        (parts(e.descr).times ? '<p class="times">' + esc(parts(e.descr).times) + "</p>" : "") +
         '<p class="dress"><span class="caps">Dress code</span>' + esc(e.dress) + "</p></article>";
     });
     $("icons").innerHTML = icons;
@@ -713,6 +745,7 @@
   }
   function personalise(party){
     document.body.classList.toggle("locked", !party);
+    if (party) document.querySelectorAll("img[data-src]").forEach(function(im){ im.src = im.getAttribute("data-src"); im.removeAttribute("data-src"); });
     renderSchedule(party ? eventsFor(party) : []);
     var y = $("yours");
     y.hidden = !party;
@@ -753,9 +786,19 @@
   function find(q){
     var note = $("r-find-note"), pick = $("r-pick");
     pick.hidden = true; pick.innerHTML = "";
+    var pw = guestPw();
+    if (!pw) { note.className = "rnote err"; note.textContent = "Please enter the password from your invitation."; $("r-pw").focus(); return; }
     note.className = "rnote"; note.textContent = "Looking…";
-    rpc("rsvp_lookup", { q: q }).then(function(res){
+    rpc("rsvp_lookup", { q: q, pw: pw }).then(function(res){
       note.textContent = "";
+      if (res && res.bad_password) {
+        pwKnown(false);
+        note.className = "rnote err";
+        note.textContent = "That password doesn’t look right. You’ll find it on your invitation.";
+        $("r-pw").focus();
+        return;
+      }
+      pwKnown(true);
       if (!res || !res.length) {
         note.textContent = /\s/.test(q.trim())
           ? "We couldn’t find that name. Try it exactly as it appears on your invitation. Still stuck? Message " + HOST_NAME + "."
@@ -848,8 +891,9 @@
 
   $("r-find").addEventListener("submit", function(e){
     e.preventDefault();
-    var q = $("r-q").value.trim();
+    var q = $("r-q").value.trim() || linked || "";
     if (q) find(q);
+    else { $("r-find-note").className = "rnote err"; $("r-find-note").textContent = "Please type your full name, first and last."; }
   });
 
   $("r-form").addEventListener("submit", function(e){
@@ -874,8 +918,12 @@
     }
     var btn = $("r-send");
     btn.disabled = true; note.textContent = "Sending…";
-    rpc("rsvp_submit", { p_party: current.party, answers: answers, p_message: $("r-msg").value })
-      .then(function(party){ btn.disabled = false; note.textContent = ""; done(party); })
+    rpc("rsvp_submit", { p_party: current.party, answers: answers, p_message: $("r-msg").value, pw: guestPw() })
+      .then(function(party){
+        btn.disabled = false;
+        if (party && party.bad_password) { pwKnown(false); forget(); $("r-find-note").className = "rnote err"; $("r-find-note").textContent = "Please enter the password from your invitation again."; return; }
+        note.textContent = ""; done(party);
+      })
       .catch(function(){
         btn.disabled = false;
         note.className = "rnote err";
@@ -913,8 +961,8 @@
       html += '<div class="k-ev">' + (manyDays ? '<p class="d">' + num(e.day) + "</p>" : "") + "<p class=\"n\">" + e.name + "</p>" +
         '<p class="m">' + num(e.time) + " · " + esc(e.venue) + "</p>" +
         (e.address ? '<p class="ad"' + (e.map_url ? ' data-map="' + esc(e.map_url) + '"' : "") + "><span>" + esc(e.address) + (e.map_url ? " · View map" : "") + "</span></p>" : "") +
-        '<p class="dr">Dress code: ' + e.dress + "</p>" +
-        (attendees.length > 1 && going[ev].length < attendees.length ? '<p class="who">' + esc(going[ev].length < 2 ? going[ev].join("") : going[ev].slice(0, -1).join(", ") + " & " + going[ev][going[ev].length - 1]) + " attending</p>" : "") +
+        (parts(e.descr).times ? '<p class="ds">' + esc(parts(e.descr).times) + "</p>" : "") +
+        '<p class="dr">Dress code: ' + esc(e.dress) + "</p>" +
         "</div>";
     });
     $("k-events").innerHTML = html;
@@ -977,10 +1025,14 @@
   /* personal link (?code=EXAMPLE) or a returning guest */
   var linked = new URLSearchParams(location.search).get("code");
   var code = linked || recall(STORE);
-  if (code) {
-    rpc("rsvp_lookup", { q: code }).then(function(res){
+  if (recall(PW_STORE)) $("r-pw-field").hidden = true;
+  if (code && recall(PW_STORE)) {
+    rpc("rsvp_lookup", { q: code, pw: recall(PW_STORE) }).then(function(res){
+      if (res && res.bad_password) return pwKnown(false);
       if (res && res.length === 1) open(res[0], !linked);
     }).catch(function(){});
+  } else if (linked) {
+    $("r-find-note").textContent = "Enter the password from your invitation to open it.";
   }
 })();
 </script>
