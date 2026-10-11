@@ -3,65 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#1C1C1C">
+<meta name="theme-color" content="#F6F3EC">
 <!-- ✏️ Replace every [PLACEHOLDER] below. Share-preview tags are what WhatsApp/iMessage show. -->
-<meta name="description" content="Ottilie & Abhi · [TOWN], 22 May 2027. Unlock your invite to RSVP and see your schedule.">
+<meta name="description" content="Ottilie & Abhi · Combe Down, Bath, 22 May 2027. Unlock your invite to RSVP and see your schedule.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ottilie & Abhi">
 <meta property="og:url" content="https://ottandabhi.co.uk/">
-<meta property="og:title" content="Ottilie & Abhi · [TOWN]">
+<meta property="og:title" content="Ottilie & Abhi · Combe Down, Bath">
 <meta property="og:description" content="22 May 2027. Unlock your invite to RSVP and see your schedule.">
 <meta property="og:image" content="https://ottandabhi.co.uk/photos/og-image.jpg">
 <meta property="og:image:secure_url" content="https://ottandabhi.co.uk/photos/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ottilie and Abhi, 22 May 2027, [TOWN]">
+<meta property="og:image:alt" content="Ottilie and Abhi, 22 May 2027, Combe Down, Bath">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ottandabhi.co.uk/photos/og-image.jpg">
-<title>Ottilie &amp; Abhi · [TOWN]</title>
+<title>Ottilie &amp; Abhi · Combe Down, Bath</title>
 <link rel="icon" type="image/png" sizes="32x32" href="photos/favicon-32.png">
 <link rel="apple-touch-icon" href="photos/favicon-180.png">
 <style>
+  /* fonts: self-hosted, both SIL Open Font Licence */
+  @font-face{font-family:"Gochi Hand"; src:url("fonts/gochi-hand.woff2") format("woff2"); font-display:swap}
+  @font-face{font-family:"Delius"; src:url("fonts/delius.woff2") format("woff2"); font-display:swap}
   :root{
-    --dark:#1C1C1C; --light:#FFFFFF;
-    --bg:var(--light); --ink:var(--dark); --soft:#6B6B6B; --hair:#E4E4E4;
+    /* colours taken from the save-the-date */
+    --dark:#084332; --light:#F6F3EC;
+    --bg:var(--light); --ink:var(--dark); --soft:rgba(8,67,50,.68); --hair:rgba(8,67,50,.2);
+    --hand:"Gochi Hand","Comic Sans MS",cursive;
+    --body:"Delius",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     --nav-h:58px;
   }
   /* dark sections: text flips to white. ✏️ Change --dark / --light above to restyle the whole site */
-  .dark{--bg:var(--dark); --ink:var(--light); --soft:rgba(255,255,255,.68); --hair:rgba(255,255,255,.24);
+  .dark{--bg:var(--dark); --ink:var(--light); --soft:rgba(246,243,236,.72); --hair:rgba(246,243,236,.26);
     background:var(--bg); color:var(--ink)}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important}}
-  body{background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-weight:400;
+  body{background:var(--bg); color:var(--ink); font-family:var(--body); font-weight:400;
     font-size:17px; line-height:1.6; font-variant-numeric:lining-nums; padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom))}
   a{color:inherit; text-underline-offset:3px; text-decoration-thickness:1px}
   strong,b{font-weight:600}
-  ::selection{background:#E0E0E0}
+  ::selection{background:rgba(8,67,50,.18)}
   [hidden]{display:none!important}
   section{scroll-margin-top:8px}
 
   .wrap{max-width:720px; margin:0 auto; padding:0 26px; text-align:center}
-  .caps{font-size:11.5px; font-weight:500; letter-spacing:.32em; text-transform:uppercase}
-  .script{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; letter-spacing:.01em; text-transform:none}
+  .caps{font-family:var(--hand); font-size:14px; font-weight:400; letter-spacing:.16em; text-transform:uppercase}
+  .script{font-family:var(--hand); font-style:normal; font-weight:300; letter-spacing:.01em; text-transform:none}
 
   /* section title: thin capitals with a script word laid over them */
   .ttl{margin:0 auto 46px; line-height:1}
   .ttl .c{display:block; font-weight:300; font-size:clamp(30px,7.4vw,48px); letter-spacing:.08em; text-transform:uppercase}
-  .ttl .s{display:block; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:clamp(28px,6.6vw,42px); text-transform:none; letter-spacing:.02em;
+  .ttl .s{display:block; font-family:var(--hand); font-style:normal; font-weight:300; font-size:clamp(28px,6.6vw,42px); text-transform:none; letter-spacing:.02em;
     margin-top:.12em; line-height:1; white-space:nowrap; opacity:.92}
   .ttl .s.l{padding-left:0; padding-right:26%}
 
   /* ═══ nav ═══ */
   .tabbar{position:fixed; left:0; right:0; bottom:0; z-index:90; display:flex;
-    background:#FFFFFF; border-top:1px solid #E4E4E4; padding-bottom:env(safe-area-inset-bottom);
+    background:var(--light); border-top:1.5px solid var(--dark); padding-bottom:env(safe-area-inset-bottom);
     transform:translateZ(0)}
   /* when the phone's own browser toolbar slides in and lifts the bar, keep a solid white
      strip underneath so no page content shows through the gap */
-  .tabbar::after{content:""; position:absolute; left:0; right:0; top:100%; height:140px; background:#FFFFFF}
+  .tabbar::after{content:""; position:absolute; left:0; right:0; top:100%; height:140px; background:var(--light)}
   .tabbar a{position:relative; flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;
-    padding:10px 2px 8px; text-decoration:none; color:rgba(28,28,28,.42); font-size:10px;
+    padding:10px 2px 8px; text-decoration:none; color:rgba(8,67,50,.45); font-family:var(--hand); font-size:12px;
     font-weight:600; letter-spacing:.16em; text-transform:uppercase; transition:color .2s}
   .tabbar a svg{width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:1.2;
     stroke-linecap:round; stroke-linejoin:round}
@@ -72,12 +78,12 @@
     body{padding-bottom:0}
     .tabbar{display:none}
     .topnav{display:flex; position:fixed; top:0; left:0; right:0; z-index:90; align-items:center; justify-content:space-between;
-      padding:22px 44px; color:var(--light); transition:background .3s, color .3s, padding .3s}
-    .topnav.solid{background:rgba(255,255,255,.95); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
-      color:var(--dark); padding:14px 44px; border-bottom:1px solid #E4E4E4}
-    .topnav .brand{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:24px; letter-spacing:.04em; line-height:1; text-decoration:none}
+      padding:22px 44px; color:var(--dark); transition:background .3s, color .3s, padding .3s}
+    .topnav.solid{background:rgba(246,243,236,.95); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
+      color:var(--dark); padding:14px 44px; border-bottom:1.5px solid var(--dark)}
+    .topnav .brand{font-family:var(--hand); font-style:normal; font-weight:300; font-size:24px; letter-spacing:.04em; line-height:1; text-decoration:none}
     .topnav .links{display:flex; gap:36px}
-    .topnav .links a{font-size:11.5px; letter-spacing:.3em; text-transform:uppercase; font-weight:500;
+    .topnav .links a{font-family:var(--hand); font-size:16px; letter-spacing:.14em; text-transform:uppercase; font-weight:500;
       text-decoration:none; opacity:.72; padding:4px 0; border-bottom:1px solid transparent; transition:.2s}
     .topnav .links a:hover{opacity:1}
     .topnav .links a.active{opacity:1; border-bottom-color:currentColor}
@@ -89,7 +95,7 @@
   .tone > img:not(.hero-logo){position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
     filter:none}
   .tone::after{content:""; position:absolute; inset:0; pointer-events:none;
-    background:linear-gradient(180deg, rgba(28,28,28,.34) 0%, rgba(28,28,28,.22) 45%, rgba(0,0,0,.62) 100%)}
+    background:linear-gradient(180deg, rgba(8,67,50,.34) 0%, rgba(8,67,50,.22) 45%, rgba(4,30,22,.62) 100%)}
   .tone > .in{position:relative; z-index:2}
 
   /* ═══ hero ═══ */
@@ -103,7 +109,7 @@
   @media(min-width:820px){.hero-logo{top:78px}}
   .hero .names{font-weight:300; font-size:clamp(30px,8.6vw,92px); line-height:1.1; letter-spacing:.14em;
     text-transform:uppercase; white-space:nowrap; padding-left:.14em}
-  .hero .names .amp{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:.9em; letter-spacing:0; text-transform:none;
+  .hero .names .amp{font-family:var(--hand); font-style:normal; font-weight:300; font-size:.9em; letter-spacing:0; text-transform:none;
     padding:0 .34em 0 .2em; vertical-align:0}
   .hero .when{margin-top:26px; opacity:.88}
   .hero-count{display:inline-flex; align-items:center; gap:14px; margin-top:22px; opacity:.8}
@@ -125,7 +131,7 @@
   /* ═══ welcome ═══ */
   .welcome{padding:84px 0 80px}
   .welcome p.body{max-width:520px; margin:0 auto 16px}
-  .welcome .sig{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:32px; letter-spacing:.02em; line-height:1.2; margin-top:26px}
+  .welcome .sig{font-family:var(--hand); font-style:normal; font-weight:300; font-size:32px; letter-spacing:.02em; line-height:1.2; margin-top:26px}
   .facts{display:grid; grid-template-columns:1fr; margin:62px auto 0; max-width:640px;
     border-top:1px solid var(--hair); border-bottom:1px solid var(--hair)}
   .fact{padding:22px 10px}
@@ -133,7 +139,7 @@
   @media(min-width:640px){.facts{grid-template-columns:repeat(3,1fr)} .fact + .fact{border-top:0; border-left:1px solid var(--hair)}}
   .fact .k{color:var(--soft); margin-bottom:6px}
   .fact .v{font-size:21px; line-height:1.3}
-  .fact .n{font-size:15px; color:var(--soft); font-style:italic; margin-top:2px}
+  .fact .n{font-size:15px; color:var(--soft); font-style:normal; margin-top:2px}
 
   /* ═══ schedule ═══ */
   #schedule{padding:0 0 90px}
@@ -142,21 +148,21 @@
   .icons svg{width:62px; height:62px; stroke:currentColor; fill:none; stroke-width:1; stroke-linecap:round; stroke-linejoin:round}
   .icons .caps{font-size:10px; letter-spacing:.24em; margin-top:14px; color:var(--soft)}
   .icons .script{font-size:clamp(19px,4.8vw,23px); line-height:1.25; margin-top:4px}
-  .yours{margin:0 0 40px; font-style:italic; color:var(--soft)}
+  .yours{margin:0 0 40px; font-style:normal; color:var(--soft)}
   .day{margin-top:76px}
   .rule-t{display:flex; align-items:center; gap:18px; justify-content:center}
   .rule-t::before,.rule-t::after{content:""; flex:1; max-width:120px; height:1px; background:var(--hair)}
   .event{margin-top:40px}
-  .event h3{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:clamp(32px,7.6vw,42px); line-height:1.15}
+  .event h3{font-family:var(--hand); font-style:normal; font-weight:300; font-size:clamp(32px,7.6vw,42px); line-height:1.15}
   .event .meta{color:var(--soft); margin-top:6px}
   .event .meta a{color:inherit; text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px}
   .event .desc{max-width:460px; margin:14px auto 0}
-  .event .dress{margin-top:14px; font-style:italic}
+  .event .dress{margin-top:14px; font-style:normal}
   .event .dress .caps{font-style:normal; font-size:10px; color:var(--soft); display:block; margin-bottom:2px}
   .event + .event{padding-top:40px; border-top:1px solid var(--hair); max-width:460px; margin-left:auto; margin-right:auto}
 
   .unlock{max-width:520px; margin:70px auto 0; padding:34px 26px 30px; border:1px solid var(--hair)}
-  .unlock .u-line{font-style:italic; margin-top:8px; color:var(--soft)}
+  .unlock .u-line{font-style:normal; margin-top:8px; color:var(--soft)}
   .dark .field input{color:var(--ink); border-bottom-color:var(--ink)}
   .dark .field .caps{color:var(--soft)}
   .dark .btn{background:var(--ink); color:var(--dark); border-color:var(--ink)}
@@ -193,7 +199,7 @@
     .blk + .blk{border-top:0}
     .blk.wide{grid-column:1/-1; border-top:1px solid var(--hair); margin-top:20px}
   }
-  .blk h3{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:32px; line-height:1.1; margin-bottom:14px}
+  .blk h3{font-family:var(--hand); font-style:normal; font-weight:300; font-size:32px; line-height:1.1; margin-bottom:14px}
   .blk p{font-size:17.5px; margin:0 auto 10px; max-width:520px}
   .blk p:last-child{margin-bottom:0}
   .blk ol{list-style:none; counter-reset:st; font-size:17.5px; max-width:520px; margin:0 auto}
@@ -203,7 +209,7 @@
   .rates div{display:flex; justify-content:space-between; gap:16px; padding:12px 4px; border-bottom:1px solid var(--hair); font-size:18px}
   .rates div span:last-child{font-weight:500; white-space:nowrap}
   .rates sup{font-size:.6em; margin-left:1px}
-  .rates-note{font-size:14.5px!important; font-style:italic; color:var(--soft)}
+  .rates-note{font-size:14.5px!important; font-style:normal; color:var(--soft)}
   .weather{display:flex; justify-content:center; gap:0; margin:22px auto 0; max-width:560px; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair)}
   .weather div{flex:1; padding:16px 6px}
   .weather div + div{border-left:1px solid var(--hair)}
@@ -228,11 +234,11 @@
   .reply-t{line-height:1; margin-bottom:10px}
   .reply-t .script{display:block; font-size:clamp(42px,10vw,64px); line-height:1.1}
   .reply-by{color:var(--soft); margin-bottom:34px}
-  .rintro{max-width:460px; margin:0 auto 10px; font-style:italic; color:var(--soft)}
+  .rintro{max-width:460px; margin:0 auto 10px; font-style:normal; color:var(--soft)}
   #rsvp form, #r-done{max-width:520px; margin:0 auto}
   .btn{display:flex; width:100%; justify-content:center; align-items:center; margin:30px 0 0; padding:18px 24px;
     background:var(--dark); border:1px solid var(--dark); border-radius:0; color:var(--light);
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:12.5px; letter-spacing:.34em; text-transform:uppercase; font-weight:600;
+    font-family:var(--hand); font-size:12.5px; letter-spacing:.34em; text-transform:uppercase; font-weight:600;
     cursor:pointer; text-decoration:none; transition:background .2s, color .2s}
   .btn:hover{background:transparent; color:var(--dark)}
   .btn:disabled{opacity:.5; cursor:wait}
@@ -241,24 +247,24 @@
   .field{display:block; margin-top:24px}
   .field .caps{display:block; font-size:10px; color:var(--soft)}
   .field input,.field textarea{width:100%; border:0; border-bottom:1px solid var(--dark); border-radius:0; background:transparent;
-    color:var(--dark); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:21px; padding:10px 0; text-align:center;
+    color:var(--dark); font-family:var(--hand); font-size:21px; padding:10px 0; text-align:center;
     -webkit-appearance:none; appearance:none}
   .field textarea{resize:vertical; min-height:90px; border:1px solid var(--hair); padding:12px 14px; margin-top:8px; font-size:18px; text-align:left}
   .field input:focus,.field textarea:focus{outline:none; border-color:var(--dark)}
-  .field input::placeholder,.field textarea::placeholder{color:var(--soft); opacity:.6; font-style:italic}
-  .rnote{margin-top:18px; font-style:italic; color:var(--soft)}
+  .field input::placeholder,.field textarea::placeholder{color:var(--soft); opacity:.6; font-style:normal}
+  .rnote{margin-top:18px; font-style:normal; color:var(--soft)}
   .rnote.err{color:#B3261E}
   .pick{margin-top:14px; border-top:1px solid var(--hair)}
   .pick button{display:block; width:100%; background:none; border:0; border-bottom:1px solid var(--hair);
-    padding:16px 0; cursor:pointer; color:var(--dark); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:22px}
-  .pick button:hover{font-style:italic}
-  .rhello{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:clamp(30px,7.4vw,40px); line-height:1.25}
+    padding:16px 0; cursor:pointer; color:var(--dark); font-family:var(--hand); font-size:22px}
+  .pick button:hover{font-style:normal}
+  .rhello{font-family:var(--hand); font-style:normal; font-weight:300; font-size:clamp(30px,7.4vw,40px); line-height:1.25}
   .rg{padding:30px 0 26px; border-top:1px solid var(--hair)}
   .rg-name{display:block; padding:14px 12px 13px; margin-bottom:10px; background:var(--dark); color:var(--light);
     font-weight:500; font-size:15px; letter-spacing:.32em; text-transform:uppercase; text-align:center}
   .rq{padding:14px 0}
   .rq .ev{margin-bottom:10px}
-  .rq .ev b{display:block; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:26px; line-height:1.2}
+  .rq .ev b{display:block; font-family:var(--hand); font-style:normal; font-weight:300; font-size:26px; line-height:1.2}
   .rq .ev span{font-size:10px; letter-spacing:.24em; text-transform:uppercase; font-weight:500; color:var(--soft)}
   .yn{display:grid; grid-template-columns:1fr 1fr; gap:10px; max-width:480px; margin:0 auto}
   @media(max-width:480px){.yn{grid-template-columns:1fr}}
@@ -266,12 +272,12 @@
   .yn input{position:absolute; opacity:0; pointer-events:none}
   .yn label{display:flex}
   .yn span{flex:1; display:flex; align-items:center; justify-content:center; gap:12px; padding:15px 14px;
-    border:1px solid var(--hair); font-size:21px; font-style:italic; color:var(--soft); background:transparent;
+    border:1px solid var(--hair); font-size:21px; font-style:normal; color:var(--soft); background:transparent;
     transition:color .15s, border-color .15s, background .15s}
   .yn span::before{content:""; flex:0 0 auto; width:18px; height:18px; border-radius:50%; border:1.5px solid currentColor;
     box-shadow:inset 0 0 0 3px var(--light); transition:.15s}
   .yn label:hover span{color:var(--dark); border-color:var(--dark)}
-  .yn input:checked + span{color:var(--dark); border:1.5px solid var(--dark); background:rgba(28,28,28,.05)}
+  .yn input:checked + span{color:var(--dark); border:1.5px solid var(--dark); background:rgba(8,67,50,.07)}
   .yn input:checked + span::before{background:var(--dark); border-color:var(--dark)}
   .yn input:focus-visible + span{outline:1px solid var(--dark); outline-offset:4px}
   .rg .field{margin-top:14px}
@@ -291,30 +297,30 @@
   .rsum .who{justify-content:flex-start; border-bottom:0; padding:22px 0 4px; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--soft)}
   .rsum{margin-top:26px; border-top:1px solid var(--hair); text-align:left}
   .rsum div{display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid var(--hair); font-size:18px}
-  .rsum div span:last-child{font-style:italic; color:var(--soft); text-align:right}
+  .rsum div span:last-child{font-style:normal; color:var(--soft); text-align:right}
   .linkish{background:none; border:0; padding:0; margin-top:24px; cursor:pointer; color:var(--soft);
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:11.5px; letter-spacing:.26em; text-transform:uppercase; font-weight:500;
+    font-family:var(--hand); font-size:11.5px; letter-spacing:.26em; text-transform:uppercase; font-weight:500;
     text-decoration:underline; text-underline-offset:5px}
 
   /* ═══ keepsake itinerary (off-screen, 840 × 1188 = A-series ratio) ═══ */
   #keep{position:fixed; left:-10000px; top:0; width:840px; height:1188px; background:var(--light); color:var(--dark);
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; text-align:center; display:flex; flex-direction:column; font-variant-numeric:lining-nums}
+    font-family:var(--hand); text-align:center; display:flex; flex-direction:column; font-variant-numeric:lining-nums}
   #keep .k-top{background:var(--dark); color:var(--light); padding:56px 40px 46px}
   #keep .k-top img{width:92px; display:block; margin:0 auto 22px}
   #keep .k-names{font-weight:300; font-size:46px; letter-spacing:.18em; text-transform:uppercase; line-height:1.1}
-  #keep .k-names em{font-style:italic; text-transform:none; letter-spacing:0; padding:0 .2em}
+  #keep .k-names em{font-style:normal; text-transform:none; letter-spacing:0; padding:0 .2em}
   #keep .k-when{margin-top:14px; font-size:14px; letter-spacing:.34em; text-transform:uppercase; opacity:.85}
   #keep .k-body{flex:1; display:flex; flex-direction:column; padding:44px 80px 40px}
   #keep .k-for{font-size:13px; letter-spacing:.34em; text-transform:uppercase; color:var(--soft)}
-  #keep .k-guests{font-style:italic; font-weight:300; font-size:36px; margin-top:6px}
+  #keep .k-guests{font-style:normal; font-weight:300; font-size:36px; margin-top:6px}
   #keep .k-ev{padding:26px 0; border-top:1px solid var(--hair)}
   #keep .k-ev:first-child{margin-top:26px}
   #keep .k-ev .d{font-size:13px; letter-spacing:.32em; text-transform:uppercase; color:var(--soft)}
-  #keep .k-ev .n{font-style:italic; font-weight:300; font-size:38px; line-height:1.2; margin-top:4px}
+  #keep .k-ev .n{font-style:normal; font-weight:300; font-size:38px; line-height:1.2; margin-top:4px}
   #keep .k-ev .m{font-size:15px; letter-spacing:.24em; text-transform:uppercase; margin-top:4px}
   #keep .k-ev .ad{font-size:18px; margin-top:4px}
   #keep .k-ev .ad span{display:inline-block; border-bottom:1px solid currentColor; padding-bottom:1px; line-height:1.3}
-  #keep .k-ev .dr{font-style:italic; font-size:21px; margin-top:8px}
+  #keep .k-ev .dr{font-style:normal; font-size:21px; margin-top:8px}
   #keep .k-ev .who{font-size:16px; color:var(--soft); margin-top:4px}
   #keep .num{font-family:inherit}
   #keep .k-foot{margin-top:auto; border-top:1px solid var(--hair); padding-top:24px; font-size:19px}
@@ -324,6 +330,51 @@
   footer{text-align:center; padding:84px 24px 70px}
   footer .script{font-size:clamp(34px,8.6vw,50px); line-height:1.2}
   footer .caps{margin-top:14px; opacity:.72; font-size:10.5px}
+
+  /* ═══ illustrated look (motifs and lettering from the save-the-date) ═══ */
+  .hero{background:var(--light); color:var(--dark); min-height:auto}
+  .hero .in{padding:72px 22px 34px; text-shadow:none}
+  @media(min-width:820px){.hero .in{padding-top:110px}}
+  .hero .kicker{font-size:18px; letter-spacing:.2em}
+  .names-art{margin:14px auto 0; line-height:0}
+  .names-art img{width:min(84vw,500px); height:auto}
+  .hero .when{margin-top:22px; font-size:17px; opacity:1}
+  .hero-count{font-size:15px; opacity:.85}
+  .hero-cta{background:var(--dark); color:var(--light); border:1.5px solid var(--dark); font-family:var(--hand);
+    font-size:21px; font-weight:400; letter-spacing:.14em}
+  .hero-cta:hover{background:transparent; color:var(--dark)}
+  @media(max-width:600px){.hero-cta{font-size:20px; letter-spacing:.12em}}
+  .hero-by{font-size:13px; opacity:.85}
+  .hero-art{display:block; width:min(94vw,600px); height:auto; margin:40px auto 0}
+  /* checkerboard strip, like the cuffs */
+  .checks{height:18px; background:repeating-conic-gradient(var(--ink) 0 25%, transparent 0 50%) 0 0/18px 18px}
+  .band.art{min-height:0; display:block; padding:76px 0 6px; background:var(--bg); color:var(--ink)}
+  .band.art .in{padding:0 22px}
+  .band.art .motif{display:block; width:min(80vw,400px); height:auto; margin:34px auto 0}
+  .band.art .sub{opacity:1; color:var(--soft)}
+  .band.art .motif.flute{width:min(40vw,190px)}
+  .ttl .c{font-family:var(--hand); font-weight:400; letter-spacing:.06em}
+  .ttl .s{opacity:1}
+  .welcome p.body{font-size:18px}
+  .welcome .sig{font-size:36px}
+  .event h3, .blk h3{font-weight:400}
+  .rq .ev b{font-weight:400}
+  .btn{font-size:17px; letter-spacing:.16em; font-weight:400}
+  .linkish{font-size:15px; letter-spacing:.12em; font-weight:400}
+  .rg-name{font-family:var(--hand); font-size:18px; letter-spacing:.16em; font-weight:400}
+  .steps{font-size:12.5px; letter-spacing:.12em}
+  .rcount{font-family:var(--hand); font-size:14px; letter-spacing:.14em}
+  footer{padding:0 0 70px}
+  footer .checks{margin-bottom:70px}
+  .foot-names{line-height:0; padding:0 24px}
+  .foot-names img{width:min(70vw,360px); height:auto}
+  footer .caps{opacity:.85; font-size:14px}
+  #keep .k-top img{width:300px}
+  #keep .k-names{font-size:52px; letter-spacing:.08em}
+  #keep .k-guests{font-family:var(--hand); font-size:40px}
+  #keep .k-ev .n{font-family:var(--hand); font-size:40px}
+  #keep .k-ev .d, #keep .k-ev .m, #keep .k-for, #keep .k-url, #keep .k-when{font-family:var(--hand); letter-spacing:.16em}
+  #keep .k-body, #keep .k-foot, #keep .k-ev .ad, #keep .k-ev .dr, #keep .k-ev .who{font-family:var(--body)}
 </style>
 </head>
 <body class="locked">
@@ -341,18 +392,18 @@
 
 <!-- ═══════════════════ HOME ═══════════════════ -->
 <section id="home" style="padding-top:0">
-  <header class="hero tone">
-    <img src="photos/hero.jpg" alt="" onerror="this.remove()">
-    <img class="hero-logo" src="photos/logo-cream.png" alt="Ottilie and Abhi monogram" onerror="this.remove()">
+  <header class="hero">
     <div class="in">
-      <h1 class="names">Ottilie<span class="amp">&amp;</span>Abhi</h1>
-      <p class="when caps">22 May 2027 · [TOWN]</p>
+      <p class="kicker caps">We&rsquo;re getting married</p>
+      <h1 class="names-art"><img src="art/names-green.svg" alt="Ottilie &amp; Abhi" width="499" height="107"></h1>
+      <p class="when caps">22 May 2027 · Combe Down, Bath</p>
       <span class="hero-count caps" id="countdown"></span>
       <a class="hero-cta" id="hero-cta" href="#rsvp">Unlock your invite</a>
       <p class="hero-by caps" id="hero-by">Kindly reply by 31 December 2026</p>
+      <img class="hero-art" src="art/toast-green.svg" alt="" width="889" height="496">
     </div>
-    <div class="scroll-cue caps">Scroll</div>
   </header>
+  <div class="checks" aria-hidden="true"></div>
 
   <div class="welcome dark">
     <div class="wrap">
@@ -416,10 +467,10 @@
 
 <!-- ═══════════════════ SCHEDULE ═══════════════════ -->
 <section id="schedule" class="dark">
-  <div class="band tone lift">
-    <img src="photos/weekend.jpg" alt="" class="weekend-img" onerror="this.remove()">
+  <div class="band art">
     <div class="in">
       <h2 class="ttl"><span class="c">Our wedding</span><span class="s">Day</span></h2>
+      <img class="motif" src="art/pour-cream.svg" alt="" width="423" height="409">
     </div>
   </div>
   <div class="wrap sec-body">
@@ -433,11 +484,12 @@
 
 <!-- ═══════════════════ TRAVEL & HOTEL ═══════════════════ -->
 <section id="travel">
-  <div class="band tone lift">
-    <img src="photos/travel.jpg" alt="" class="travel-img" onerror="this.remove()">
+  <div class="checks" aria-hidden="true"></div>
+  <div class="band art">
     <div class="in">
-      <h2 class="ttl"><span class="c">The destination</span><span class="s">[TOWN]</span></h2>
+      <h2 class="ttl"><span class="c">The destination</span><span class="s">Combe Down, Bath</span></h2>
       <p class="sub caps">Travel &amp; where to stay</p>
+      <img class="motif flute" src="art/flute-green.svg" alt="" width="231" height="289">
     </div>
   </div>
 
@@ -485,10 +537,10 @@
 
 <!-- ═══════════════════ FAQ ═══════════════════ -->
 <section id="faq" class="dark">
-  <div class="band tone lift">
-    <img src="photos/qa.jpg" alt="" class="qa-img" onerror="this.remove()">
+  <div class="band art">
     <div class="in">
       <h2 class="ttl"><span class="c">Questions</span><span class="s">&amp; answers</span></h2>
+      <img class="motif" src="art/cheese-cream.svg" alt="" width="589" height="311">
     </div>
   </div>
   <div class="wrap sec-body">
@@ -518,16 +570,17 @@
 </section>
 
 <footer class="dark">
-  <p class="script">Ottilie &amp; Abhi</p>
-  <p class="caps">[TOWN] · 22 May 2027</p>
+  <div class="checks" aria-hidden="true"></div>
+  <p class="foot-names"><img src="art/names-cream.svg" alt="Ottilie &amp; Abhi" width="499" height="107"></p>
+  <p class="caps">Combe Down, Bath · 22 May 2027</p>
 </footer>
 
 <!-- keepsake itinerary: drawn off-screen, turned into a PDF on request -->
 <div id="keep" aria-hidden="true">
   <div class="k-top">
-    <img src="photos/logo-cream.png" alt="">
+    <img src="art/toast-cream.svg" alt="">
     <p class="k-names">Ottilie <em>&amp;</em> Abhi</p>
-    <p class="k-when">22 May 2027 · [TOWN]</p>
+    <p class="k-when">22 May 2027 · Combe Down, Bath</p>
   </div>
   <div class="k-body">
     <p class="k-for">An itinerary for</p>
@@ -862,7 +915,7 @@
       window.html2canvas ? 0 : loadScript(CDN + "html2canvas/1.4.1/html2canvas.min.js"),
       window.jspdf ? 0 : loadScript(CDN + "jspdf/2.5.1/jspdf.umd.min.js")
     ]).then(function(){ return document.fonts.ready; })
-      .then(function(){ return html2canvas($("keep"), { scale: 2, backgroundColor: "#FFFFFF", logging: false }); })
+      .then(function(){ return html2canvas($("keep"), { scale: 2, backgroundColor: "#F6F3EC", logging: false }); })
       .then(function(canvas){
         var pdf = new window.jspdf.jsPDF({ unit: "mm", format: "a4" });
         pdf.addImage(canvas.toDataURL("image/jpeg", 0.92), "JPEG", 0, 0, 210, 297);
