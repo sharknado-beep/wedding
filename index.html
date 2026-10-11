@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1C1C1C">
+<!-- ✏️ Replace every [PLACEHOLDER] below. Share-preview tags are what WhatsApp/iMessage show. -->
+<meta name="description" content="Ottilie & Abhi · [TOWN], 22 May 2027. Unlock your invite to RSVP and see your schedule.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ottilie & Abhi">
+<meta property="og:url" content="https://ottandabhi.co.uk/">
+<meta property="og:title" content="Ottilie & Abhi · [TOWN]">
+<meta property="og:description" content="22 May 2027. Unlock your invite to RSVP and see your schedule.">
+<meta property="og:image" content="https://ottandabhi.co.uk/photos/og-image.jpg">
+<meta property="og:image:secure_url" content="https://ottandabhi.co.uk/photos/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ottilie and Abhi, 22 May 2027, [TOWN]">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ottandabhi.co.uk/photos/og-image.jpg">
+<title>Ottilie &amp; Abhi · [TOWN]</title>
+<link rel="icon" type="image/png" sizes="32x32" href="photos/favicon-32.png">
+<link rel="apple-touch-icon" href="photos/favicon-180.png">
+<style>
+  :root{
+    --dark:#1C1C1C; --light:#FFFFFF;
+    --bg:var(--light); --ink:var(--dark); --soft:#6B6B6B; --hair:#E4E4E4;
+    --nav-h:58px;
+  }
+  /* dark sections: text flips to white. ✏️ Change --dark / --light above to restyle the whole site */
+  .dark{--bg:var(--dark); --ink:var(--light); --soft:rgba(255,255,255,.68); --hair:rgba(255,255,255,.24);
+    background:var(--bg); color:var(--ink)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important}}
+  body{background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-weight:400;
+    font-size:17px; line-height:1.6; font-variant-numeric:lining-nums; padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom))}
+  a{color:inherit; text-underline-offset:3px; text-decoration-thickness:1px}
+  strong,b{font-weight:600}
+  ::selection{background:#E0E0E0}
+  [hidden]{display:none!important}
+  section{scroll-margin-top:8px}
+
+  .wrap{max-width:720px; margin:0 auto; padding:0 26px; text-align:center}
+  .caps{font-size:11.5px; font-weight:500; letter-spacing:.32em; text-transform:uppercase}
+  .script{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; letter-spacing:.01em; text-transform:none}
+
+  /* section title: thin capitals with a script word laid over them */
+  .ttl{margin:0 auto 46px; line-height:1}
+  .ttl .c{display:block; font-weight:300; font-size:clamp(30px,7.4vw,48px); letter-spacing:.08em; text-transform:uppercase}
+  .ttl .s{display:block; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:clamp(28px,6.6vw,42px); text-transform:none; letter-spacing:.02em;
+    margin-top:.12em; line-height:1; white-space:nowrap; opacity:.92}
+  .ttl .s.l{padding-left:0; padding-right:26%}
+
+  /* ═══ nav ═══ */
+  .tabbar{position:fixed; left:0; right:0; bottom:0; z-index:90; display:flex;
+    background:#FFFFFF; border-top:1px solid #E4E4E4; padding-bottom:env(safe-area-inset-bottom);
+    transform:translateZ(0)}
+  /* when the phone's own browser toolbar slides in and lifts the bar, keep a solid white
+     strip underneath so no page content shows through the gap */
+  .tabbar::after{content:""; position:absolute; left:0; right:0; top:100%; height:140px; background:#FFFFFF}
+  .tabbar a{position:relative; flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;
+    padding:10px 2px 8px; text-decoration:none; color:rgba(28,28,28,.42); font-size:10px;
+    font-weight:600; letter-spacing:.16em; text-transform:uppercase; transition:color .2s}
+  .tabbar a svg{width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:1.2;
+    stroke-linecap:round; stroke-linejoin:round}
+  .tabbar a.active{color:var(--dark)}
+  .tabbar a.active::before{content:""; position:absolute; top:-1px; left:28%; right:28%; height:1px; background:var(--dark)}
+  .topnav{display:none}
+  @media(min-width:820px){
+    body{padding-bottom:0}
+    .tabbar{display:none}
+    .topnav{display:flex; position:fixed; top:0; left:0; right:0; z-index:90; align-items:center; justify-content:space-between;
+      padding:22px 44px; color:var(--light); transition:background .3s, color .3s, padding .3s}
+    .topnav.solid{background:rgba(255,255,255,.95); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
+      color:var(--dark); padding:14px 44px; border-bottom:1px solid #E4E4E4}
+    .topnav .brand{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:24px; letter-spacing:.04em; line-height:1; text-decoration:none}
+    .topnav .links{display:flex; gap:36px}
+    .topnav .links a{font-size:11.5px; letter-spacing:.3em; text-transform:uppercase; font-weight:500;
+      text-decoration:none; opacity:.72; padding:4px 0; border-bottom:1px solid transparent; transition:.2s}
+    .topnav .links a:hover{opacity:1}
+    .topnav .links a.active{opacity:1; border-bottom-color:currentColor}
+    section{scroll-margin-top:66px}
+  }
+
+  /* ═══ photographs (a soft dark veil keeps text readable) ═══ */
+  .tone{position:relative; overflow:hidden; background:var(--dark); color:var(--light)}
+  .tone > img:not(.hero-logo){position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    filter:none}
+  .tone::after{content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(180deg, rgba(28,28,28,.34) 0%, rgba(28,28,28,.22) 45%, rgba(0,0,0,.62) 100%)}
+  .tone > .in{position:relative; z-index:2}
+
+  /* ═══ hero ═══ */
+  .hero{min-height:100svh; display:flex; align-items:center; justify-content:center; text-align:center}
+  .hero > img:not(.hero-logo){object-position:center 76%}
+  /* phones/tablets: photo a little taller than the screen, pinned to the top, so the couple sit below the button */
+  @media(max-width:819px){.hero > img:not(.hero-logo){height:116%; bottom:auto; object-position:center top}}
+  .hero .in{padding:110px 22px 130px; width:100%; text-shadow:0 1px 24px rgba(0,0,0,.45)}
+  .hero-logo{position:absolute; top:calc(24px + env(safe-area-inset-top)); left:50%; transform:translateX(-50%);
+    width:clamp(80px,20vw,112px); z-index:3; opacity:.92}
+  @media(min-width:820px){.hero-logo{top:78px}}
+  .hero .names{font-weight:300; font-size:clamp(30px,8.6vw,92px); line-height:1.1; letter-spacing:.14em;
+    text-transform:uppercase; white-space:nowrap; padding-left:.14em}
+  .hero .names .amp{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:.9em; letter-spacing:0; text-transform:none;
+    padding:0 .34em 0 .2em; vertical-align:0}
+  .hero .when{margin-top:26px; opacity:.88}
+  .hero-count{display:inline-flex; align-items:center; gap:14px; margin-top:22px; opacity:.8}
+  .hero-count::before,.hero-count::after{content:""; width:30px; height:1px; background:currentColor; opacity:.55}
+  .scroll-cue{position:absolute; left:50%; transform:translateX(-50%); bottom:calc(var(--nav-h) + 24px); z-index:2;
+    display:flex; flex-direction:column; align-items:center; gap:10px; opacity:.75; font-size:10px}
+  .scroll-cue::before{content:""; width:1px; height:40px; background:currentColor; opacity:.6}
+  @media(min-width:820px){.scroll-cue{bottom:30px}}
+
+  /* ═══ locked until an invitation is found ═══ */
+  body.locked #schedule, body.locked #travel, body.locked #faq, body.locked [data-gated]{display:none!important}
+  .hero-cta{display:block; width:100%; max-width:440px; margin:34px auto 0; box-sizing:border-box; text-align:center; padding:17px 30px; border:1px solid var(--light);
+    background:var(--light); color:var(--dark); text-decoration:none; text-shadow:none;
+    font-size:16px; letter-spacing:.24em; text-transform:uppercase; font-weight:600; transition:.2s}
+  .hero-cta:hover{background:transparent; color:var(--light)}
+  @media(max-width:600px){.hero-cta{max-width:none; padding:19px 10px; font-size:16px; letter-spacing:.24em}}
+  .hero-by{margin-top:14px; font-size:10px; opacity:.85}
+
+  /* ═══ welcome ═══ */
+  .welcome{padding:84px 0 80px}
+  .welcome p.body{max-width:520px; margin:0 auto 16px}
+  .welcome .sig{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:32px; letter-spacing:.02em; line-height:1.2; margin-top:26px}
+  .facts{display:grid; grid-template-columns:1fr; margin:62px auto 0; max-width:640px;
+    border-top:1px solid var(--hair); border-bottom:1px solid var(--hair)}
+  .fact{padding:22px 10px}
+  .fact + .fact{border-top:1px solid var(--hair)}
+  @media(min-width:640px){.facts{grid-template-columns:repeat(3,1fr)} .fact + .fact{border-top:0; border-left:1px solid var(--hair)}}
+  .fact .k{color:var(--soft); margin-bottom:6px}
+  .fact .v{font-size:21px; line-height:1.3}
+  .fact .n{font-size:15px; color:var(--soft); font-style:italic; margin-top:2px}
+
+  /* ═══ schedule ═══ */
+  #schedule{padding:0 0 90px}
+  .icons{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; max-width:560px; margin:0 auto}
+  .icons > div{display:flex; flex-direction:column; align-items:center}
+  .icons svg{width:62px; height:62px; stroke:currentColor; fill:none; stroke-width:1; stroke-linecap:round; stroke-linejoin:round}
+  .icons .caps{font-size:10px; letter-spacing:.24em; margin-top:14px; color:var(--soft)}
+  .icons .script{font-size:clamp(19px,4.8vw,23px); line-height:1.25; margin-top:4px}
+  .yours{margin:0 0 40px; font-style:italic; color:var(--soft)}
+  .day{margin-top:76px}
+  .rule-t{display:flex; align-items:center; gap:18px; justify-content:center}
+  .rule-t::before,.rule-t::after{content:""; flex:1; max-width:120px; height:1px; background:var(--hair)}
+  .event{margin-top:40px}
+  .event h3{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:clamp(32px,7.6vw,42px); line-height:1.15}
+  .event .meta{color:var(--soft); margin-top:6px}
+  .event .meta a{color:inherit; text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px}
+  .event .desc{max-width:460px; margin:14px auto 0}
+  .event .dress{margin-top:14px; font-style:italic}
+  .event .dress .caps{font-style:normal; font-size:10px; color:var(--soft); display:block; margin-bottom:2px}
+  .event + .event{padding-top:40px; border-top:1px solid var(--hair); max-width:460px; margin-left:auto; margin-right:auto}
+
+  .unlock{max-width:520px; margin:70px auto 0; padding:34px 26px 30px; border:1px solid var(--hair)}
+  .unlock .u-line{font-style:italic; margin-top:8px; color:var(--soft)}
+  .dark .field input{color:var(--ink); border-bottom-color:var(--ink)}
+  .dark .field .caps{color:var(--soft)}
+  .dark .btn{background:var(--ink); color:var(--dark); border-color:var(--ink)}
+  .dark .btn:hover{background:transparent; color:var(--ink)}
+  .dark .pick button{color:var(--ink)}
+  .dark .rnote.err{color:#F3B4B4}
+  .yours a{color:inherit}
+
+  /* ═══ destination / travel ═══ */
+  .band{min-height:clamp(320px,52svh,520px); display:flex; align-items:center; justify-content:center; text-align:center}
+  .band .in{padding:60px 22px}
+  .band .ttl{margin:0}
+  /* travel photo: anchor on the couple (~57% down the photo) so they sit at the same spot at every
+     width, and lift the title into the top of the banner, above them */
+  .band img.travel-img{object-position:center 57%}
+  .band.lift{align-items:flex-start; min-height:clamp(420px,62svh,600px)}
+  .band.lift .in{padding-top:clamp(30px,6svh,56px)}
+  .band img.weekend-img{object-position:center 58%}
+  .band img.qa-img{object-position:44% 55%}
+  .sec-body{padding-top:70px}
+  /* phones: shorter banners, trimmed from the top so the couple stay in shot under the title */
+  @media(max-width:819px){
+    .band.lift{min-height:360px}
+    .band img.weekend-img{object-position:center 80%}
+    .band img.travel-img{object-position:center 70%}
+  }
+  .band .sub{margin-top:18px; opacity:.88}
+  .details{padding:90px 0 80px}
+  .grid{display:grid; grid-template-columns:1fr; gap:0; max-width:920px; margin:0 auto; padding:0 26px; text-align:center}
+  .blk{padding:40px 6px}
+  .blk + .blk{border-top:1px solid var(--hair)}
+  @media(min-width:820px){
+    .grid{grid-template-columns:repeat(2,1fr); column-gap:56px}
+    .blk + .blk{border-top:0}
+    .blk.wide{grid-column:1/-1; border-top:1px solid var(--hair); margin-top:20px}
+  }
+  .blk h3{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:32px; line-height:1.1; margin-bottom:14px}
+  .blk p{font-size:17.5px; margin:0 auto 10px; max-width:520px}
+  .blk p:last-child{margin-bottom:0}
+  .blk ol{list-style:none; counter-reset:st; font-size:17.5px; max-width:520px; margin:0 auto}
+  .blk ol li{counter-increment:st; padding:0 0 14px}
+  .blk ol li::before{content:counter(st, upper-roman) "."; display:block; font-size:12px; letter-spacing:.2em; color:var(--soft)}
+  .rates{max-width:460px; margin:20px auto 12px; border-top:1px solid var(--hair)}
+  .rates div{display:flex; justify-content:space-between; gap:16px; padding:12px 4px; border-bottom:1px solid var(--hair); font-size:18px}
+  .rates div span:last-child{font-weight:500; white-space:nowrap}
+  .rates sup{font-size:.6em; margin-left:1px}
+  .rates-note{font-size:14.5px!important; font-style:italic; color:var(--soft)}
+  .weather{display:flex; justify-content:center; gap:0; margin:22px auto 0; max-width:560px; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair)}
+  .weather div{flex:1; padding:16px 6px}
+  .weather div + div{border-left:1px solid var(--hair)}
+  .weather .t{font-size:24px; line-height:1.2}
+  .weather .caps{font-size:9.5px; letter-spacing:.2em; color:var(--soft)}
+
+  /* ═══ FAQ ═══ */
+  #faq{padding:0 0 90px}
+  .faqs{text-align:left; max-width:600px; margin:0 auto}
+  details.faq{border-bottom:1px solid var(--hair)}
+  details.faq:first-of-type{border-top:1px solid var(--hair)}
+  details.faq summary{list-style:none; cursor:pointer; padding:20px 0; display:flex; gap:16px;
+    align-items:baseline; justify-content:space-between; font-size:22px; line-height:1.3}
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{content:"+"; font-size:22px; font-weight:300; color:var(--soft); flex:0 0 auto; transition:transform .25s}
+  details.faq[open] summary::after{transform:rotate(45deg)}
+  details.faq .a{padding:0 0 22px; font-size:17.5px}
+  details.faq .a p + p{margin-top:10px}
+
+  /* ═══ RSVP ═══ */
+  #rsvp{padding:80px 0 100px}
+  .reply-t{line-height:1; margin-bottom:10px}
+  .reply-t .script{display:block; font-size:clamp(42px,10vw,64px); line-height:1.1}
+  .reply-by{color:var(--soft); margin-bottom:34px}
+  .rintro{max-width:460px; margin:0 auto 10px; font-style:italic; color:var(--soft)}
+  #rsvp form, #r-done{max-width:520px; margin:0 auto}
+  .btn{display:flex; width:100%; justify-content:center; align-items:center; margin:30px 0 0; padding:18px 24px;
+    background:var(--dark); border:1px solid var(--dark); border-radius:0; color:var(--light);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:12.5px; letter-spacing:.34em; text-transform:uppercase; font-weight:600;
+    cursor:pointer; text-decoration:none; transition:background .2s, color .2s}
+  .btn:hover{background:transparent; color:var(--dark)}
+  .btn:disabled{opacity:.5; cursor:wait}
+  .btn.ghost{background:transparent; color:var(--dark)}
+  .btn.ghost:hover{background:var(--dark); color:var(--light)}
+  .field{display:block; margin-top:24px}
+  .field .caps{display:block; font-size:10px; color:var(--soft)}
+  .field input,.field textarea{width:100%; border:0; border-bottom:1px solid var(--dark); border-radius:0; background:transparent;
+    color:var(--dark); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:21px; padding:10px 0; text-align:center;
+    -webkit-appearance:none; appearance:none}
+  .field textarea{resize:vertical; min-height:90px; border:1px solid var(--hair); padding:12px 14px; margin-top:8px; font-size:18px; text-align:left}
+  .field input:focus,.field textarea:focus{outline:none; border-color:var(--dark)}
+  .field input::placeholder,.field textarea::placeholder{color:var(--soft); opacity:.6; font-style:italic}
+  .rnote{margin-top:18px; font-style:italic; color:var(--soft)}
+  .rnote.err{color:#B3261E}
+  .pick{margin-top:14px; border-top:1px solid var(--hair)}
+  .pick button{display:block; width:100%; background:none; border:0; border-bottom:1px solid var(--hair);
+    padding:16px 0; cursor:pointer; color:var(--dark); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:22px}
+  .pick button:hover{font-style:italic}
+  .rhello{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:clamp(30px,7.4vw,40px); line-height:1.25}
+  .rg{padding:30px 0 26px; border-top:1px solid var(--hair)}
+  .rg-name{display:block; padding:14px 12px 13px; margin-bottom:10px; background:var(--dark); color:var(--light);
+    font-weight:500; font-size:15px; letter-spacing:.32em; text-transform:uppercase; text-align:center}
+  .rq{padding:14px 0}
+  .rq .ev{margin-bottom:10px}
+  .rq .ev b{display:block; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-style:italic; font-weight:300; font-size:26px; line-height:1.2}
+  .rq .ev span{font-size:10px; letter-spacing:.24em; text-transform:uppercase; font-weight:500; color:var(--soft)}
+  .yn{display:grid; grid-template-columns:1fr 1fr; gap:10px; max-width:480px; margin:0 auto}
+  @media(max-width:480px){.yn{grid-template-columns:1fr}}
+  .yn label{position:relative; cursor:pointer; display:flex}
+  .yn input{position:absolute; opacity:0; pointer-events:none}
+  .yn label{display:flex}
+  .yn span{flex:1; display:flex; align-items:center; justify-content:center; gap:12px; padding:15px 14px;
+    border:1px solid var(--hair); font-size:21px; font-style:italic; color:var(--soft); background:transparent;
+    transition:color .15s, border-color .15s, background .15s}
+  .yn span::before{content:""; flex:0 0 auto; width:18px; height:18px; border-radius:50%; border:1.5px solid currentColor;
+    box-shadow:inset 0 0 0 3px var(--light); transition:.15s}
+  .yn label:hover span{color:var(--dark); border-color:var(--dark)}
+  .yn input:checked + span{color:var(--dark); border:1.5px solid var(--dark); background:rgba(28,28,28,.05)}
+  .yn input:checked + span::before{background:var(--dark); border-color:var(--dark)}
+  .yn input:focus-visible + span{outline:1px solid var(--dark); outline-offset:4px}
+  .rg .field{margin-top:14px}
+  .steps{list-style:none; display:flex; justify-content:center; gap:0; margin:0 auto 40px; max-width:520px; font-size:9.5px; letter-spacing:.22em}
+  .steps li{flex:1; padding:10px 4px 0; border-top:1px solid var(--hair); color:var(--soft); opacity:.55; counter-increment:stp}
+  .steps li::before{content:counter(stp, upper-roman) "  "; }
+  .steps{counter-reset:stp}
+  .steps li.on{opacity:1; color:var(--dark); border-top:2px solid var(--dark); padding-top:9px}
+  .steps li.past{opacity:.9}
+  .rintro.small{font-size:15.5px; margin-top:22px}
+  .rq .ask{font-size:17px; margin-bottom:10px}
+  .rq.missing .yn span{color:#B3261E; border-color:#B3261E}
+  .rq.missing .ask{color:#B3261E}
+  .rcount{margin-top:26px; font-size:10.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--soft)}
+  .rcount.ok{color:var(--dark)}
+  .tick svg{width:54px; height:54px; stroke:var(--dark); fill:none; stroke-width:1; stroke-linecap:round; stroke-linejoin:round; margin-bottom:10px}
+  .rsum .who{justify-content:flex-start; border-bottom:0; padding:22px 0 4px; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--soft)}
+  .rsum{margin-top:26px; border-top:1px solid var(--hair); text-align:left}
+  .rsum div{display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid var(--hair); font-size:18px}
+  .rsum div span:last-child{font-style:italic; color:var(--soft); text-align:right}
+  .linkish{background:none; border:0; padding:0; margin-top:24px; cursor:pointer; color:var(--soft);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:11.5px; letter-spacing:.26em; text-transform:uppercase; font-weight:500;
+    text-decoration:underline; text-underline-offset:5px}
+
+  /* ═══ keepsake itinerary (off-screen, 840 × 1188 = A-series ratio) ═══ */
+  #keep{position:fixed; left:-10000px; top:0; width:840px; height:1188px; background:var(--light); color:var(--dark);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; text-align:center; display:flex; flex-direction:column; font-variant-numeric:lining-nums}
+  #keep .k-top{background:var(--dark); color:var(--light); padding:56px 40px 46px}
+  #keep .k-top img{width:92px; display:block; margin:0 auto 22px}
+  #keep .k-names{font-weight:300; font-size:46px; letter-spacing:.18em; text-transform:uppercase; line-height:1.1}
+  #keep .k-names em{font-style:italic; text-transform:none; letter-spacing:0; padding:0 .2em}
+  #keep .k-when{margin-top:14px; font-size:14px; letter-spacing:.34em; text-transform:uppercase; opacity:.85}
+  #keep .k-body{flex:1; display:flex; flex-direction:column; padding:44px 80px 40px}
+  #keep .k-for{font-size:13px; letter-spacing:.34em; text-transform:uppercase; color:var(--soft)}
+  #keep .k-guests{font-style:italic; font-weight:300; font-size:36px; margin-top:6px}
+  #keep .k-ev{padding:26px 0; border-top:1px solid var(--hair)}
+  #keep .k-ev:first-child{margin-top:26px}
+  #keep .k-ev .d{font-size:13px; letter-spacing:.32em; text-transform:uppercase; color:var(--soft)}
+  #keep .k-ev .n{font-style:italic; font-weight:300; font-size:38px; line-height:1.2; margin-top:4px}
+  #keep .k-ev .m{font-size:15px; letter-spacing:.24em; text-transform:uppercase; margin-top:4px}
+  #keep .k-ev .ad{font-size:18px; margin-top:4px}
+  #keep .k-ev .ad span{display:inline-block; border-bottom:1px solid currentColor; padding-bottom:1px; line-height:1.3}
+  #keep .k-ev .dr{font-style:italic; font-size:21px; margin-top:8px}
+  #keep .k-ev .who{font-size:16px; color:var(--soft); margin-top:4px}
+  #keep .num{font-family:inherit}
+  #keep .k-foot{margin-top:auto; border-top:1px solid var(--hair); padding-top:24px; font-size:19px}
+  #keep .k-url{margin-top:10px; font-size:13px; letter-spacing:.34em; text-transform:uppercase; color:var(--soft)}
+
+  /* ═══ footer ═══ */
+  footer{text-align:center; padding:84px 24px 70px}
+  footer .script{font-size:clamp(34px,8.6vw,50px); line-height:1.2}
+  footer .caps{margin-top:14px; opacity:.72; font-size:10.5px}
+</style>
+</head>
+<body class="locked">
+
+<nav class="topnav" id="topnav" aria-label="Site">
+  <a class="brand" href="#home">O &amp; A</a>
+  <div class="links">
+    <a href="#home" class="active">Home</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#schedule" data-gated>Schedule</a>
+    <a href="#travel" data-gated>Travel</a>
+    <a href="#faq" data-gated>FAQ</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HOME ═══════════════════ -->
+<section id="home" style="padding-top:0">
+  <header class="hero tone">
+    <img src="photos/hero.jpg" alt="" onerror="this.remove()">
+    <img class="hero-logo" src="photos/logo-cream.png" alt="Ottilie and Abhi monogram" onerror="this.remove()">
+    <div class="in">
+      <h1 class="names">Ottilie<span class="amp">&amp;</span>Abhi</h1>
+      <p class="when caps">22 May 2027 · [TOWN]</p>
+      <span class="hero-count caps" id="countdown"></span>
+      <a class="hero-cta" id="hero-cta" href="#rsvp">Unlock your invite</a>
+      <p class="hero-by caps" id="hero-by">Kindly reply by 31 December 2026</p>
+    </div>
+    <div class="scroll-cue caps">Scroll</div>
+  </header>
+
+  <div class="welcome dark">
+    <div class="wrap">
+      <p class="body">[YOUR WELCOME MESSAGE. One or two short paragraphs: who you are, where the
+      wedding is, and how excited you are that guests are coming.]</p>
+      <p class="body">[A SECOND, OPTIONAL PARAGRAPH.]</p>
+      <p class="body" style="margin-top:22px">With love,</p>
+      <p class="sig">Ottilie &amp; Abhi</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ RSVP ═══════════════════ -->
+<section id="rsvp">
+  <div class="wrap">
+    <h2 class="reply-t"><span class="script">Kindly Reply</span></h2>
+    <p class="reply-by caps">By 31 December 2026</p>
+
+    <ol class="steps caps" aria-label="RSVP steps">
+      <li data-step="find">Find your invitation</li>
+      <li data-step="form">Reply</li>
+      <li data-step="done">Confirmed</li>
+    </ol>
+
+    <form id="r-find" autocomplete="off" novalidate>
+      <p class="rintro">Find your invitation to reply. It also unlocks your schedule, travel
+      details and FAQs. Enter your full name as it appears on your invitation.</p>
+      <label class="field"><span class="caps">Your full name</span>
+        <input id="r-q" type="text" placeholder="e.g. Jane Example" autocapitalize="words" spellcheck="false" enterkeyhint="search"></label>
+      <button class="btn" type="submit">Find my invitation</button>
+      <p class="rnote" id="r-find-note" aria-live="polite"></p>
+      <div class="pick" id="r-pick" hidden></div>
+    </form>
+
+    <form id="r-form" hidden novalidate>
+      <p class="rhello" id="r-hello"></p>
+      <p class="rintro" id="r-lead"></p>
+      <div id="r-guests"></div>
+      <label class="field"><span class="caps">A note for us · optional</span>
+        <textarea id="r-msg" maxlength="1000" placeholder="Arrival dates, questions, song requests…"></textarea></label>
+      <p class="rcount" id="r-count" aria-live="polite"></p>
+      <button class="btn" type="submit" id="r-send">Send our reply</button>
+      <p class="rnote" id="r-form-note" aria-live="polite"></p>
+      <button class="linkish" type="button" data-restart>Not your invitation? Search again</button>
+    </form>
+
+    <div id="r-done" hidden>
+      <p class="tick" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22"/><path d="m15 24.5 6 6 12-13"/></svg></p>
+      <p class="rhello" id="r-thanks"></p>
+      <p class="rintro" id="r-received"></p>
+      <div class="rsum" id="r-sum"></div>
+      <button class="btn" type="button" id="r-pdf">Download our itinerary (PDF)</button>
+      <button class="btn ghost" type="button" id="r-cal">Add to my calendar</button>
+      <button class="btn ghost" type="button" id="r-edit">Change our answers</button>
+      <p class="rintro small">You can change your answers here any time before 31 December 2026.</p>
+      <button class="linkish" type="button" data-restart>Reply for a different invitation</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SCHEDULE ═══════════════════ -->
+<section id="schedule" class="dark">
+  <div class="band tone lift">
+    <img src="photos/weekend.jpg" alt="" class="weekend-img" onerror="this.remove()">
+    <div class="in">
+      <h2 class="ttl"><span class="c">Our wedding</span><span class="s">Day</span></h2>
+    </div>
+  </div>
+  <div class="wrap sec-body">
+    <p class="yours" id="yours" hidden></p>
+
+    <div class="icons" id="icons"></div>
+    <div id="days"></div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ TRAVEL & HOTEL ═══════════════════ -->
+<section id="travel">
+  <div class="band tone lift">
+    <img src="photos/travel.jpg" alt="" class="travel-img" onerror="this.remove()">
+    <div class="in">
+      <h2 class="ttl"><span class="c">The destination</span><span class="s">[TOWN]</span></h2>
+      <p class="sub caps">Travel &amp; where to stay</p>
+    </div>
+  </div>
+
+  <div class="details">
+    <div class="grid">
+      <div class="blk">
+        <h3>Getting here</h3>
+        <p>[Nearest airport, and how long it takes to get into town by car / train.]</p>
+      </div>
+      <div class="blk">
+        <h3>Getting around</h3>
+        <p>[Best way to get around, e.g. a ride-hailing app with a download link.]</p>
+      </div>
+      <div class="blk wide">
+        <h3>Where to stay</h3>
+        <p>[Where guests could stay. If you've negotiated a hotel rate, say so and link the hotel:
+        <a href="[HOTEL_MAP_LINK]" target="_blank" rel="noopener"><strong>[HOTEL_NAME]</strong></a>.]</p>
+        <div class="rates">
+          <div><span>[Room type 1]</span><span>[PRICE]</span></div>
+          <div><span>[Room type 2]</span><span>[PRICE]</span></div>
+        </div>
+        <p class="rates-note">[Per room, per night · any small print]</p>
+        <p>[How to book, e.g. "get in touch with [HOST_NAME]".]</p>
+      </div>
+      <div class="blk wide">
+        <h3>Coming from abroad?</h3>
+        <ol>
+          <li><strong>Check your passport:</strong> [validity rules].</li>
+          <li><strong>Visas and travel permits:</strong> [who needs one, and where to apply. Link only to official GOV.UK pages].</li>
+        </ol>
+      </div>
+      <div class="blk wide">
+        <h3>The weather</h3>
+        <p>[What the weather will be like and what to pack.]</p>
+        <div class="weather">
+          <div><div class="t">[TEMP]</div><div class="caps">Daytime</div></div>
+          <div><div class="t">[TIME]</div><div class="caps">Sunset</div></div>
+          <div><div class="t">[TEMP]</div><div class="caps">After dark</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ FAQ ═══════════════════ -->
+<section id="faq" class="dark">
+  <div class="band tone lift">
+    <img src="photos/qa.jpg" alt="" class="qa-img" onerror="this.remove()">
+    <div class="in">
+      <h2 class="ttl"><span class="c">Questions</span><span class="s">&amp; answers</span></h2>
+    </div>
+  </div>
+  <div class="wrap sec-body">
+    <div class="faqs">
+      <details class="faq">
+        <summary>When do I need to RSVP by?</summary>
+        <div class="a"><p><strong>Please RSVP by 31 December 2026</strong>, <a href="#rsvp">online here</a>.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What should I wear?</summary>
+        <div class="a"><p>Each event&rsquo;s dress code is on <a href="#schedule">the schedule</a>.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Can I bring a plus one?</summary>
+        <div class="a"><p>Unfortunately we&rsquo;ve had to keep the numbers tight, so we can only welcome the names on your invitation.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Should I bring a gift?</summary>
+        <div class="a"><p>[Your gift note.]</p></div>
+      </details>
+      <details class="faq">
+        <summary>Still got a question?</summary>
+        <div class="a"><p>Get in touch with Ottilie or Abhi.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="dark">
+  <p class="script">Ottilie &amp; Abhi</p>
+  <p class="caps">[TOWN] · 22 May 2027</p>
+</footer>
+
+<!-- keepsake itinerary: drawn off-screen, turned into a PDF on request -->
+<div id="keep" aria-hidden="true">
+  <div class="k-top">
+    <img src="photos/logo-cream.png" alt="">
+    <p class="k-names">Ottilie <em>&amp;</em> Abhi</p>
+    <p class="k-when">22 May 2027 · [TOWN]</p>
+  </div>
+  <div class="k-body">
+    <p class="k-for">An itinerary for</p>
+    <p class="k-guests" id="k-guests"></p>
+    <div id="k-events"></div>
+    <div class="k-foot">
+      <p id="k-stay">[OPTIONAL FOOTER LINE, e.g. hotel booking reminder]</p>
+      <p class="k-url">ottandabhi.co.uk</p>
+    </div>
+  </div>
+</div>
+
+<nav class="tabbar" aria-label="Sections">
+  <a href="#home" class="active"><svg viewBox="0 0 24 24"><path d="M4 21v-8c0-5 3.6-9 8-9s8 4 8 9v8"/><path d="M2 21h20M9 21v-4a3 3 0 0 1 6 0v4"/></svg>Home</a>
+  <a href="#rsvp"><svg viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>RSVP</a>
+  <a href="#schedule" data-gated><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Schedule</a>
+  <a href="#travel" data-gated><svg viewBox="0 0 24 24"><path d="M10.5 13.5 3 11l1.5-1.5L10 10l4.5-4.5a1.6 1.6 0 0 1 2.3 2.3L12.5 12l.5 5.5L11.5 19l-2.5-6.5"/><path d="M4 20h16"/></svg>Travel</a>
+  <a href="#faq" data-gated><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.3a2.5 2.5 0 1 1 3.4 2.3c-.8.3-.9 1-.9 1.7"/><path d="M12 16.8v.2"/></svg>FAQ</a>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+
+  /* CONFIG. Supabase → Project Settings → API. The publishable ("anon public") key is designed to be
+     public: guests can only call rsvp_lookup / rsvp_submit (see supabase/01-schema.sql); the
+     tables themselves are locked. NEVER put the service_role key here. */
+  var SB_URL = "https://yayycvpwqiekmtyijbwd.supabase.co";
+  var SB_KEY = "sb_publishable_q-tb0uLgk3epp39PlShh6w_QtIvwqGW";
+  var WEDDING_START = new Date(2027, 4, 22);  // 22 May 2027 (months are 0-based: 4 = May)
+  var WEDDING_END   = new Date(2027, 4, 23);  // the day after
+  var HOST_NAME = "Abhi";               // ✏️ who guests should message if stuck
+  var COUPLE = "Ottilie & Abhi";
+
+  /* No event details ship with the page. They come from the database (rsvp_events)
+     only when someone finds their invitation, and only for the events it includes. */
+  var EVENTS = {};
+  function learn(party){
+    if (party && party.events) Object.keys(party.events).forEach(function(k){ EVENTS[k] = party.events[k]; });
+    return party;
+  }
+  function byOrder(keys){ return keys.slice().sort(function(a, b){ return EVENTS[a].sort - EVENTS[b].sort; }); }
+  function evs(g){ return byOrder((g.events || []).filter(function(k){ return EVENTS[k]; })); }
+  var STORE = "rsvp-party";
+
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function store(k, v){ try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch(e){} }
+  function recall(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+
+  function rpc(fn, body){
+    return fetch(SB_URL + "/rest/v1/rpc/" + fn, {
+      method: "POST",
+      headers: { "apikey": SB_KEY, "Content-Type": "application/json" },   // publishable keys go in apikey only
+      body: JSON.stringify(body)
+    }).then(function(r){
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    });
+  }
+
+  /* ─── countdown ─── */
+  var cd = $("countdown");
+  var start = WEDDING_START, end = WEDDING_END, now = new Date();
+  if (now < start) {
+    var days = Math.ceil((start - now) / 86400000);
+    cd.textContent = days + (days === 1 ? " day to go" : " days to go");
+  } else if (now < end) {
+    cd.textContent = "It’s our wedding day";
+  } else {
+    cd.textContent = "Just married";
+  }
+
+  /* ─── scroll-spy ─── */
+  var links = document.querySelectorAll(".tabbar a, .topnav .links a");
+  function setActive(id){
+    links.forEach(function(a){ a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+  }
+  if ("IntersectionObserver" in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: "-35% 0px -60% 0px" });
+    document.querySelectorAll("section[id]").forEach(function(s){ obs.observe(s); });
+  }
+
+  /* ─── desktop nav: transparent over the hero, white once scrolled ─── */
+  var nav = $("topnav");
+  function navState(){ nav.classList.toggle("solid", window.scrollY > window.innerHeight * 0.6); }
+  window.addEventListener("scroll", navState, { passive: true }); navState();
+
+  /* ─── schedule: nothing shows until an invitation is found; then only its events ─── */
+  var ICONS = [
+    '<circle cx="25" cy="38" r="13"/><circle cx="39" cy="38" r="13"/><path d="M25 25l-4-5 4-5 4 5z"/><path d="M21 20h8"/>',
+    '<circle cx="32" cy="36" r="15"/><circle cx="32" cy="36" r="10"/><path d="M10 22v8a3 3 0 0 0 3 3v17M10 22v8M13 22v8M16 22v8a3 3 0 0 1-3 3"/><path d="M53 22c-3 3-3 10 0 12v16"/>',
+    '<path d="M13 22h16c0 8-3.6 12-8 12s-8-4-8-12z"/><path d="M21 34v14M15 48h12"/><path d="M35 22h16c0 8-3.6 12-8 12s-8-4-8-12z"/><path d="M43 34v14M37 48h12"/><path d="M32 8v6M26 11l2 3.5M38 11l-2 3.5"/>'
+  ];
+  function renderSchedule(keys){
+    var icons = "", days = "", lastDay = null;
+    keys.forEach(function(k){
+      var e = EVENTS[k];
+      icons += '<div data-ev="' + esc(k) + '"><svg viewBox="0 0 64 64" aria-hidden="true">' + (ICONS[e.sort - 1] || ICONS[2]) + "</svg>" +
+        '<span class="caps">' + esc(e.short) + '</span><span class="script">' + esc(e.label) + "</span></div>";
+      if (e.day_key !== lastDay) {
+        if (lastDay !== null) days += "</div>";
+        days += '<div class="day"><p class="rule-t caps">' + esc(e.day) + "</p>";
+        lastDay = e.day_key;
+      }
+      days += '<article class="event" data-ev="' + esc(k) + '"><h3>' + esc(e.name) + "</h3>" +
+        '<p class="meta caps">' + esc(e.time) + " · " +
+          (e.map_url ? '<a href="' + esc(e.map_url) + '" target="_blank" rel="noopener">' + esc(e.venue) + "</a>" : esc(e.venue)) + "</p>" +
+        (e.descr ? '<p class="desc">' + esc(e.descr) + "</p>" : "") +
+        '<p class="dress"><span class="caps">Dress code</span>' + esc(e.dress) + "</p></article>";
+    });
+    $("icons").innerHTML = icons;
+    $("icons").style.gridTemplateColumns = "repeat(" + Math.max(keys.length, 1) + ",1fr)";
+    $("icons").style.maxWidth = (keys.length * 187) + "px";
+    $("days").innerHTML = days + (lastDay !== null ? "</div>" : "");
+  }
+  function eventsFor(party){
+    var set = {};
+    party.guests.forEach(function(g){ evs(g).forEach(function(k){ set[k] = true; }); });
+    return byOrder(Object.keys(set));
+  }
+  function personalise(party){
+    document.body.classList.toggle("locked", !party);
+    renderSchedule(party ? eventsFor(party) : []);
+    var y = $("yours");
+    y.hidden = !party;
+    if (party) {
+      y.innerHTML = "Your schedule, " + esc(names(party)) + ". <a href=\"#\" id=\"not-you\">Not you?</a>";
+      $("not-you").onclick = function(e){ e.preventDefault(); forget(); $("rsvp").scrollIntoView(); $("r-q").focus(); };
+    }
+  }
+  personalise(null);
+
+  /* ─── RSVP ─── */
+  var current = null;
+
+  var ORDER = ["find", "form", "done"];
+  function show(step){
+    $("r-find").hidden = step !== "find";
+    $("r-form").hidden = step !== "form";
+    $("r-done").hidden = step !== "done";
+    document.querySelectorAll(".steps li").forEach(function(li){
+      var i = ORDER.indexOf(li.getAttribute("data-step")), cur = ORDER.indexOf(step);
+      li.classList.toggle("on", i === cur);
+      li.classList.toggle("past", i < cur);
+    });
+  }
+  function fullName(g){ return (g.first_name + " " + g.last_name).trim(); }
+  function countAnswers(){
+    var qs = document.querySelectorAll("#r-guests .rq"), n = 0;
+    qs.forEach(function(q){ if (q.querySelector("input:checked")) n++; });
+    var c = $("r-count");
+    c.textContent = n === qs.length ? "All answered, ready to send" : n + " of " + qs.length + " answered";
+    c.classList.toggle("ok", n === qs.length);
+  }
+  function names(party){
+    var f = party.guests.map(function(g){ return g.first_name; });
+    return f.length < 2 ? f.join("") : f.slice(0, -1).join(", ") + " & " + f[f.length - 1];
+  }
+
+  function find(q){
+    var note = $("r-find-note"), pick = $("r-pick");
+    pick.hidden = true; pick.innerHTML = "";
+    note.className = "rnote"; note.textContent = "Looking…";
+    rpc("rsvp_lookup", { q: q }).then(function(res){
+      note.textContent = "";
+      if (!res || !res.length) {
+        note.textContent = /\s/.test(q.trim())
+          ? "We couldn’t find that name. Try it exactly as it appears on your invitation. Still stuck? Message " + HOST_NAME + "."
+          : "Please type your full name, first and last (e.g. Jane Example).";
+        return;
+      }
+      if (res.length === 1) return open(res[0]);
+      note.textContent = "Which invitation is yours?";
+      res.forEach(function(p){
+        var b = document.createElement("button");
+        b.type = "button";
+        b.textContent = p.guests.map(function(g){ return (g.first_name + " " + g.last_name).trim(); }).join(" & ");
+        b.onclick = function(){ open(p); };
+        pick.appendChild(b);
+      });
+      pick.hidden = false;
+    }).catch(function(){
+      note.className = "rnote err";
+      note.textContent = "Something went wrong. Please try again in a moment.";
+    });
+  }
+
+  function open(party, quiet){
+    current = learn(party);
+    store(STORE, party.party);
+    personalise(party);
+    var answered = party.guests.some(function(g){ return g.responded_at; });
+    if (answered && show.last !== "edit") return done(party, quiet);
+    show.last = null;
+    $("r-hello").textContent = "Hello, " + names(party) + ".";
+    var many = party.guests.length > 1;
+    $("r-lead").textContent = many
+      ? "We’ve found your invitation. There’s a reply for each of you below. We’ve ticked “joyfully accepts” for everything, so just change anything someone can’t make."
+      : "We’ve found your invitation. We’ve ticked “joyfully accepts” for everything, so just change anything you can’t make.";
+    var html = "";
+    party.guests.forEach(function(g, i){
+      html += '<div class="rg" data-id="' + esc(g.id) + '"><p class="rg-name">' + esc(fullName(g)) + "</p>";
+      evs(g).forEach(function(ev){
+        var n = "g" + i + "-" + ev, v = g[ev], yes = v !== false;   // unanswered = pre-ticked yes
+        html += '<div class="rq" data-ev="' + ev + '"><div class="ev"><b>' + esc(EVENTS[ev].name) + "</b><span>" + esc(EVENTS[ev].day) + " · " + esc(EVENTS[ev].time) + "</span></div>" +
+          '<div class="yn">' +
+          '<label><input type="radio" name="' + n + '" value="1"' + (yes ? " checked" : "") + "><span>Joyfully accepts</span></label>" +
+          '<label><input type="radio" name="' + n + '" value="0"' + (yes ? "" : " checked") + "><span>Regretfully declines</span></label>" +
+          "</div></div>";
+      });
+      html += '<label class="field"><span class="caps">' + (many ? esc(g.first_name) + "’s dietary requirements" : "Dietary requirements") + ' · optional</span>' +
+        '<input type="text" maxlength="300" data-diet placeholder="e.g. vegetarian, nut allergy" value="' + esc(g.dietary || "") + '"></label></div>';
+    });
+    $("r-guests").innerHTML = html;
+    $("r-guests").onchange = function(e){
+      var q = e.target.closest(".rq"); if (q) q.classList.remove("missing");
+      countAnswers();
+    };
+    countAnswers();
+    var msg = party.guests.map(function(g){ return g.message; }).filter(Boolean)[0];
+    $("r-msg").value = msg || "";
+    $("r-form-note").textContent = "";
+    show("form");
+    if (!quiet) $("rsvp").scrollIntoView();
+  }
+
+  function done(party, quiet){
+    current = learn(party);
+    var anyYes = party.guests.some(function(g){
+      return evs(g).some(function(ev){ return g[ev] === true; });
+    });
+    $("r-thanks").textContent = anyYes
+      ? "Thank you! We can’t wait to celebrate with you."
+      : "Thank you for letting us know. You’ll be missed.";
+    var when = party.guests.map(function(g){ return g.responded_at; }).filter(Boolean).sort().pop();
+    var d = when ? new Date(when) : null;
+    $("r-received").textContent = "Your reply has been received" +
+      (d && !isNaN(d) ? " (" + d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }) + ")" : "") +
+      ". Here’s what you told us:";
+    var rows = "", many = party.guests.length > 1;
+    party.guests.forEach(function(g){
+      if (many) rows += '<div class="who">' + esc(fullName(g)) + "</div>";
+      evs(g).forEach(function(ev){
+        rows += "<div><span>" + EVENTS[ev].name + "</span><span>" +
+          (g[ev] === true ? "Attending" : g[ev] === false ? "Not attending" : "No reply yet") + "</span></div>";
+      });
+      if (g.dietary) rows += "<div><span>Dietary</span><span>" + esc(g.dietary) + "</span></div>";
+    });
+    $("r-sum").innerHTML = rows;
+    $("r-cal").hidden = !anyYes;
+    $("r-pdf").hidden = !anyYes;
+    show("done");
+    if (!quiet) $("rsvp").scrollIntoView();
+  }
+
+  $("r-find").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = $("r-q").value.trim();
+    if (q) find(q);
+  });
+
+  $("r-form").addEventListener("submit", function(e){
+    e.preventDefault();
+    var note = $("r-form-note"), missing = false, answers = [];
+    note.className = "rnote";
+    document.querySelectorAll("#r-guests .rg").forEach(function(el){
+      var a = { id: el.getAttribute("data-id"), dietary: el.querySelector("[data-diet]").value };
+      el.querySelectorAll(".rq").forEach(function(q){
+        var c = q.querySelector("input:checked");
+        q.classList.toggle("missing", !c);
+        if (!c) missing = true; else a[q.getAttribute("data-ev")] = c.value === "1";
+      });
+      answers.push(a);
+    });
+    if (missing) {
+      note.className = "rnote err";
+      note.textContent = "A few events still need an answer. They’re marked in red.";
+      var first = document.querySelector("#r-guests .rq.missing");
+      if (first) first.scrollIntoView({ block: "center" });
+      return;
+    }
+    var btn = $("r-send");
+    btn.disabled = true; note.textContent = "Sending…";
+    rpc("rsvp_submit", { p_party: current.party, answers: answers, p_message: $("r-msg").value })
+      .then(function(party){ btn.disabled = false; note.textContent = ""; done(party); })
+      .catch(function(){
+        btn.disabled = false;
+        note.className = "rnote err";
+        note.textContent = "That didn’t send. Please check your connection and try again.";
+      });
+  });
+
+  $("r-edit").onclick = function(){ show.last = "edit"; open(current); };
+
+  /* keepsake PDF: libraries load only when someone asks for it */
+  function loadScript(src){
+    return new Promise(function(ok, fail){
+      var t = document.createElement("script"); t.src = src; t.onload = ok; t.onerror = fail;
+      document.head.appendChild(t);
+    });
+  }
+  $("r-pdf").onclick = function(){
+    if (!current) return;
+    var btn = this, label = btn.textContent;
+    var going = {};
+    current.guests.forEach(function(g){
+      evs(g).forEach(function(ev){ if (g[ev] === true) (going[ev] = going[ev] || []).push(g.first_name); });
+    });
+    var attendees = current.guests.filter(function(g){
+      return evs(g).some(function(ev){ return g[ev] === true; });
+    });
+    $("k-guests").textContent = attendees.map(fullName).join(" & ");
+    var html = "";
+    byOrder(Object.keys(going)).forEach(function(ev){
+      var e = EVENTS[ev];
+      var num = function(t){ return t.replace(/[0-9]+/g, '<span class="num">$&</span>'); };
+      html += '<div class="k-ev"><p class="d">' + num(e.day) + "</p><p class=\"n\">" + e.name + "</p>" +
+        '<p class="m">' + num(e.time) + " · " + esc(e.venue) + "</p>" +
+        (e.address ? '<p class="ad"' + (e.map_url ? ' data-map="' + esc(e.map_url) + '"' : "") + "><span>" + num(esc(e.address)) + (e.map_url ? " · View map" : "") + "</span></p>" : "") +
+        '<p class="dr">Dress code: ' + e.dress + "</p>" +
+        (attendees.length > 1 && going[ev].length < attendees.length ? '<p class="who">' + esc(going[ev].join(" & ")) + " attending</p>" : "") +
+        "</div>";
+    });
+    $("k-events").innerHTML = html;
+    btn.disabled = true; btn.textContent = "Preparing your itinerary…";
+    var CDN = "https://cdnjs.cloudflare.com/ajax/libs/";
+    Promise.all([
+      window.html2canvas ? 0 : loadScript(CDN + "html2canvas/1.4.1/html2canvas.min.js"),
+      window.jspdf ? 0 : loadScript(CDN + "jspdf/2.5.1/jspdf.umd.min.js")
+    ]).then(function(){ return document.fonts.ready; })
+      .then(function(){ return html2canvas($("keep"), { scale: 2, backgroundColor: "#FFFFFF", logging: false }); })
+      .then(function(canvas){
+        var pdf = new window.jspdf.jsPDF({ unit: "mm", format: "a4" });
+        pdf.addImage(canvas.toDataURL("image/jpeg", 0.92), "JPEG", 0, 0, 210, 297);
+        // make each address line a clickable Google Maps link (840px card → 210mm page)
+        var k = $("keep").getBoundingClientRect(), mm = 210 / k.width;
+        $("keep").querySelectorAll("[data-map]").forEach(function(el){
+          var r = el.getBoundingClientRect();
+          pdf.link((r.left - k.left) * mm, (r.top - k.top) * mm, r.width * mm, r.height * mm, { url: el.getAttribute("data-map") });
+        });
+        pdf.save("wedding-itinerary.pdf");
+      })
+      .catch(function(){ alert("Sorry, the itinerary couldn’t be made just now. Please try again."); })
+      .then(function(){ btn.disabled = false; btn.textContent = label; });
+  };
+
+  /* add the events they're attending to their calendar (.ics) */
+  $("r-cal").onclick = function(){
+    if (!current) return;
+    var mine = {};
+    current.guests.forEach(function(g){ evs(g).forEach(function(ev){ if (g[ev] === true) mine[ev] = true; }); });
+    var L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Wedding//RSVP//EN", "CALSCALE:GREGORIAN"];
+    byOrder(Object.keys(mine)).forEach(function(ev){
+      var c = EVENTS[ev];
+      L.push("BEGIN:VEVENT", "UID:" + ev + "@ottandabhi.co.uk", "DTSTAMP:20260928T000000Z",
+        "DTSTART:" + c.cal_start, "DTEND:" + c.cal_end,
+        "SUMMARY:" + EVENTS[ev].name + " · " + COUPLE,
+        "LOCATION:" + c.cal_where.replace(/,/g, "\\,"),
+        "URL:https://ottandabhi.co.uk/", "END:VEVENT");
+    });
+    L.push("END:VCALENDAR");
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([L.join("\r\n")], { type: "text/calendar" }));
+    a.download = "wedding.ics";
+    document.body.appendChild(a); a.click(); a.remove();
+  };
+  /* forget the remembered invitation: schedule goes back to the public view, RSVP to step I */
+  function forget(){
+    current = null; store(STORE, null); personalise(null);
+    $("r-q").value = ""; $("r-find-note").textContent = ""; $("r-pick").hidden = true;
+    show("find");
+  }
+  document.querySelectorAll("[data-restart]").forEach(function(b){
+    b.onclick = function(){ forget(); $("r-q").focus(); };
+  });
+
+  show("find");
+
+  /* personal link (?code=EXAMPLE) or a returning guest */
+  var linked = new URLSearchParams(location.search).get("code");
+  var code = linked || recall(STORE);
+  if (code) {
+    rpc("rsvp_lookup", { q: code }).then(function(res){
+      if (res && res.length === 1) open(res[0], !linked);
+    }).catch(function(){});
+  }
+})();
+</script>
+</body>
+</html>
