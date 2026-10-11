@@ -372,7 +372,7 @@
   .foot-names{line-height:0; padding:0 24px}
   .foot-names img{width:min(70vw,360px); height:auto}
   footer .caps{opacity:.85; font-size:14px}
-  #keep .k-top img{width:190px; margin-bottom:12px}
+  #keep .k-top img{width:150px; margin-bottom:10px}
   #keep .k-top{padding:30px 40px 26px}
   #keep .k-body{padding:28px 80px 28px}
   #keep .k-ev{padding:16px 0}
@@ -402,8 +402,16 @@
   .tl-i + .tl-i::before{content:""; display:block; width:56px; height:1px; background:var(--soft); margin:0 auto 14px}
   .tl-i strong{display:block; font-weight:700; font-size:19px; letter-spacing:.02em}
   #keep .ds .tl{max-width:600px; margin:6px auto 0; font-size:16px; line-height:1.35}
-  #keep .ds .tl-i{padding:5px 0}
+  #keep .ds .tl-i{padding:3px 0}
   #keep .ds .tl-i strong{display:inline; font-size:16px; margin-right:6px}
+  .event .dress .dc{font-size:22px; line-height:1.3; margin-top:2px}
+  .event .dress .caps{font-size:13px}
+  .event .dress .dc-note{font-size:15px; line-height:1.45; color:var(--soft); max-width:400px; margin:8px auto 0}
+  #keep .dr-note{font-family:var(--body); font-size:14px; color:var(--soft); margin-top:3px}
+  /* mobile tab bar: the section you're on gets a green pill */
+  .tabbar a{margin:6px 3px; border-radius:12px; transition:background .2s, color .2s}
+  .tabbar a.active{background:var(--dark); color:var(--light)}
+  .tabbar a.active::before{display:none}
 </style>
 </head>
 <body class="locked">
@@ -739,6 +747,8 @@
     '<path d="M13 22h16c0 8-3.6 12-8 12s-8-4-8-12z"/><path d="M21 34v14M15 48h12"/><path d="M35 22h16c0 8-3.6 12-8 12s-8-4-8-12z"/><path d="M43 34v14M37 48h12"/><path d="M32 8v6M26 11l2 3.5M38 11l-2 3.5"/>'
   ];
   /* an event's description is an intro, a blank line, then its timings */
+  /* dress code: first line is the code, anything after it is a short explainer */
+  function dressParts(d){ d = d || ""; var i = d.indexOf("\n"); return i < 0 ? [d, ""] : [d.slice(0, i), d.slice(i + 1)]; }
   function timeline(d){
     return '<div class="tl">' + (d || "").split(/\n+/).filter(function(l){ return l.trim(); }).map(function(l){
       var m = l.match(/^(.{1,22}?) · (.*)$/);
@@ -764,7 +774,8 @@
         '<p class="meta">' + 
           (e.map_url ? '<a href="' + esc(e.map_url) + '" target="_blank" rel="noopener">' + esc(e.venue) + "</a>" : esc(e.venue)) + "</p>" +
         (e.descr ? timeline(e.descr) : "") +
-        '<p class="dress"><span class="caps">Dress code</span>' + esc(e.dress) + "</p></article>";
+        '<div class="dress"><span class="caps">Dress code</span><p class="dc">' + esc(dressParts(e.dress)[0]) + "</p>" +
+          (dressParts(e.dress)[1] ? '<p class="dc-note">' + esc(dressParts(e.dress)[1]) + "</p>" : "") + "</div></article>";
     });
     $("icons").innerHTML = "";
     $("days").innerHTML = days + (lastDay !== null ? "</div>" : "");
@@ -994,7 +1005,8 @@
       html += '<div class="k-ev">' + (manyDays ? '<p class="d">' + num(e.day) + "</p>" : "") + "<p class=\"n\">" + e.name + "</p>" +
         '<p class="ad"' + (e.map_url ? ' data-map="' + esc(e.map_url) + '"' : "") + "><span>" + esc(e.venue) + "</span></p>" +
         (e.descr ? '<div class="ds">' + timeline(e.descr) + "</div>" : "") +
-        '<p class="dr">Dress code: ' + esc(e.dress) + "</p>" +
+        '<p class="dr">Dress code: ' + esc(dressParts(e.dress)[0]) + "</p>" +
+        (dressParts(e.dress)[1] ? '<p class="dr-note">' + esc(dressParts(e.dress)[1]) + "</p>" : "") +
         "</div>";
     });
     $("k-events").innerHTML = html;
