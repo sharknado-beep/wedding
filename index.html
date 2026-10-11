@@ -391,6 +391,19 @@
   #keep .k-ev .ds{font-family:var(--body); font-size:17px; line-height:1.4; margin:10px auto 0; max-width:600px; white-space:pre-line; color:var(--dark)}
   #keep .k-ev .m{font-size:17px}
 
+  .us-set{margin:0 auto 40px; max-width:340px}
+  .us-set .us{margin:0 auto}
+  .us-pair{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:-14px}
+  .us-pair .us{max-width:none; padding:7px 7px 9px; transform:rotate(3deg)}
+  .us-pair .us + .us{transform:rotate(-3deg); margin-top:18px}
+  @media(min-width:820px){.us-set{max-width:440px} .us-set > .us{max-width:340px}}
+  .tl{max-width:460px; margin:16px auto 0; font-size:18px; line-height:1.45}
+  .tl-i{padding:12px 0}
+  .tl-i + .tl-i::before{content:""; display:block; width:56px; height:1px; background:var(--soft); margin:0 auto 14px}
+  .tl-i strong{display:block; font-weight:700; font-size:19px; letter-spacing:.02em}
+  #keep .ds .tl{max-width:600px; margin:6px auto 0; font-size:16px; line-height:1.35}
+  #keep .ds .tl-i{padding:5px 0}
+  #keep .ds .tl-i strong{display:inline; font-size:16px; margin-right:6px}
 </style>
 </head>
 <body class="locked">
@@ -422,7 +435,13 @@
 
   <div class="welcome dark" data-gated>
     <div class="wrap">
-      <figure class="us"><img data-src="photos/ott-abhi.jpg" alt="Ottilie and Abhi" width="800" height="1000"></figure>
+      <div class="us-set">
+        <figure class="us"><img data-src="photos/ott-abhi.jpg" alt="Ottilie and Abhi" width="800" height="1000"></figure>
+        <div class="us-pair">
+          <figure class="us"><img data-src="photos/festival.jpg" alt="Ottilie and Abhi at a festival" width="800" height="1000"></figure>
+          <figure class="us"><img data-src="photos/ring.jpg" alt="Ottilie showing her engagement ring" width="800" height="1000"></figure>
+        </div>
+      </div>
       <p class="body">We would love for you to join us in Combe Down. We&rsquo;ll be getting married at
       the village church and then celebrating in the garden at Ott&rsquo;s family home, with good food,
       drinks and the people we love most.</p>
@@ -447,8 +466,8 @@
     </ol>
 
     <form id="r-find" autocomplete="off" novalidate>
-      <p class="rintro">Enter the password we shared with you, then your full name as it appears on
-      your invitation. This unlocks your schedule, travel details and FAQs.</p>
+      <p class="rintro">Enter the password we shared with you and your first and second name. This
+      unlocks your schedule, travel details and FAQs.</p>
       <label class="field" id="r-pw-field"><span class="caps">Password · shared by us</span>
         <input id="r-pw" type="password" autocomplete="off" autocapitalize="none" spellcheck="false"></label>
       <label class="field"><span class="caps">Your full name</span>
@@ -720,6 +739,12 @@
     '<path d="M13 22h16c0 8-3.6 12-8 12s-8-4-8-12z"/><path d="M21 34v14M15 48h12"/><path d="M35 22h16c0 8-3.6 12-8 12s-8-4-8-12z"/><path d="M43 34v14M37 48h12"/><path d="M32 8v6M26 11l2 3.5M38 11l-2 3.5"/>'
   ];
   /* an event's description is an intro, a blank line, then its timings */
+  function timeline(d){
+    return '<div class="tl">' + (d || "").split(/\n+/).filter(function(l){ return l.trim(); }).map(function(l){
+      var m = l.match(/^(.{1,22}?) · (.*)$/);
+      return '<p class="tl-i">' + (m ? '<strong>' + esc(m[1]) + '</strong>' + esc(m[2]) : esc(l)) + "</p>";
+    }).join("") + "</div>";
+  }
   function parts(d){
     d = d || ""; var i = d.indexOf("\n\n");
     return i < 0 ? { intro: "", times: d } : { intro: d.slice(0, i), times: d.slice(i + 2) };
@@ -738,7 +763,7 @@
       days += '<article class="event" data-ev="' + esc(k) + '"><h3>' + esc(e.name) + "</h3>" +
         '<p class="meta">' + 
           (e.map_url ? '<a href="' + esc(e.map_url) + '" target="_blank" rel="noopener">' + esc(e.venue) + "</a>" : esc(e.venue)) + "</p>" +
-        (e.descr ? '<p class="times">' + esc(e.descr) + "</p>" : "") +
+        (e.descr ? timeline(e.descr) : "") +
         '<p class="dress"><span class="caps">Dress code</span>' + esc(e.dress) + "</p></article>";
     });
     $("icons").innerHTML = "";
@@ -968,7 +993,7 @@
       var num = function(t){ return t.replace(/[0-9]+/g, '<span class="num">$&</span>'); };
       html += '<div class="k-ev">' + (manyDays ? '<p class="d">' + num(e.day) + "</p>" : "") + "<p class=\"n\">" + e.name + "</p>" +
         '<p class="ad"' + (e.map_url ? ' data-map="' + esc(e.map_url) + '"' : "") + "><span>" + esc(e.venue) + "</span></p>" +
-        (e.descr ? '<p class="ds">' + esc(e.descr) + "</p>" : "") +
+        (e.descr ? '<div class="ds">' + timeline(e.descr) + "</div>" : "") +
         '<p class="dr">Dress code: ' + esc(e.dress) + "</p>" +
         "</div>";
     });
