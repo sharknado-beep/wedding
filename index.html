@@ -149,12 +149,13 @@
   .icons .caps{font-size:10px; letter-spacing:.24em; margin-top:14px; color:var(--soft)}
   .icons .script{font-size:clamp(19px,4.8vw,23px); line-height:1.25; margin-top:4px}
   .yours{margin:0 0 40px; font-style:normal; color:var(--soft)}
-  .day{margin-top:76px}
+  .day{margin-top:60px}
+  .day .rule-t{font-size:24px; letter-spacing:.1em; color:var(--ink)}
   .rule-t{display:flex; align-items:center; gap:18px; justify-content:center}
   .rule-t::before,.rule-t::after{content:""; flex:1; max-width:120px; height:1px; background:var(--hair)}
   .event{margin-top:40px}
   .event h3{font-family:var(--hand); font-style:normal; font-weight:300; font-size:clamp(32px,7.6vw,42px); line-height:1.15}
-  .event .meta{color:var(--ink); margin-top:8px; font-size:17px; letter-spacing:.1em}
+  .event .meta{color:var(--ink); margin-top:8px; font-size:18px; line-height:1.4}
   .event .meta a{color:inherit; text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px}
   .event .desc{max-width:460px; margin:14px auto 0; white-space:pre-line}
   .event .dress{margin-top:16px; font-style:normal}
@@ -246,7 +247,7 @@
   .btn.ghost{background:transparent; color:var(--dark)}
   .btn.ghost:hover{background:var(--dark); color:var(--light)}
   .field{display:block; margin-top:24px}
-  .field .caps{display:block; font-size:10px; color:var(--soft)}
+  .field .caps{display:block; font-size:16px; letter-spacing:.12em; color:var(--soft)}
   .field input,.field textarea{width:100%; border:0; border-bottom:1px solid var(--dark); border-radius:0; background:transparent;
     color:var(--dark); font-family:var(--hand); font-size:21px; padding:10px 0; text-align:center;
     -webkit-appearance:none; appearance:none}
@@ -282,6 +283,7 @@
   .yn input:checked + span::before{background:var(--dark); border-color:var(--dark)}
   .yn input:focus-visible + span{outline:1px solid var(--dark); outline-offset:4px}
   .rg .field{margin-top:14px}
+  .rg .field .caps{font-size:13px}
   .steps{list-style:none; display:flex; justify-content:center; gap:0; margin:0 auto 40px; max-width:520px; font-size:9.5px; letter-spacing:.22em}
   .steps li{flex:1; padding:10px 4px 0; border-top:1px solid var(--hair); color:var(--soft); opacity:.55; counter-increment:stp}
   .steps li::before{content:counter(stp, upper-roman) "  "; }
@@ -321,7 +323,7 @@
   #keep .k-ev .m{font-size:15px; letter-spacing:.24em; text-transform:uppercase; margin-top:4px}
   #keep .k-ev .ad{font-size:18px; margin-top:4px}
   #keep .k-ev .ad span{display:inline-block; border-bottom:1px solid currentColor; padding-bottom:1px; line-height:1.3}
-  #keep .k-ev .dr{font-style:normal; font-size:18px; margin-top:8px}
+  #keep .k-ev .dr{font-style:normal; font-size:17px; margin-top:8px}
   #keep .k-ev .who{font-size:16px; color:var(--soft); margin-top:4px}
   #keep .num{font-family:inherit}
   #keep .k-foot{margin-top:auto; border-top:1px solid var(--hair); padding-top:24px; font-size:19px}
@@ -386,7 +388,7 @@
     box-shadow:0 10px 30px rgba(0,0,0,.25)}
   .us img{display:block; width:100%; height:auto}
   @media(min-width:820px){.us{max-width:340px}}
-  #keep .k-ev .ds{font-family:var(--body); font-size:19px; line-height:1.45; margin:10px auto 0; max-width:600px; white-space:pre-line; color:var(--dark)}
+  #keep .k-ev .ds{font-family:var(--body); font-size:17px; line-height:1.4; margin:10px auto 0; max-width:600px; white-space:pre-line; color:var(--dark)}
   #keep .k-ev .m{font-size:17px}
 
 </style>
@@ -413,7 +415,6 @@
       <p class="when caps">22 May 2027 · Combe Down, Bath</p>
       <span class="hero-count caps" id="countdown"></span>
       <a class="hero-cta" id="hero-cta" href="#rsvp">Unlock your invite</a>
-      <p class="hero-by caps" id="hero-by">Kindly reply by 31 December 2026</p>
       <img class="hero-art" src="art/toast-green.svg" alt="" width="889" height="496">
     </div>
   </header>
@@ -422,9 +423,9 @@
   <div class="welcome dark" data-gated>
     <div class="wrap">
       <figure class="us"><img data-src="photos/ott-abhi.jpg" alt="Ottilie and Abhi" width="800" height="1000"></figure>
-      <p class="body">We&rsquo;re so happy you&rsquo;ll be joining us in Combe Down. We&rsquo;ll be married
-      at the village church, then celebrate in the garden at the family home with good food, drinks and
-      the people we love most.</p>
+      <p class="body">We would love for you to join us in Combe Down. We&rsquo;ll be getting married at
+      the village church and then celebrating in the garden at Ott&rsquo;s family home, with good food,
+      drinks and the people we love most.</p>
       <p class="body">We can&rsquo;t wait to see you there.</p>
       <p class="body" style="margin-top:22px">With love,</p>
       <p class="sig">Ott &amp; Abhi</p>
@@ -446,12 +447,12 @@
     </ol>
 
     <form id="r-find" autocomplete="off" novalidate>
-      <p class="rintro">Enter the password from your invitation, then your full name as it appears
-      on it. This unlocks your schedule, travel details and FAQs.</p>
-      <label class="field" id="r-pw-field"><span class="caps">Password · from your invitation</span>
+      <p class="rintro">Enter the password we shared with you, then your full name as it appears on
+      your invitation. This unlocks your schedule, travel details and FAQs.</p>
+      <label class="field" id="r-pw-field"><span class="caps">Password · shared by us</span>
         <input id="r-pw" type="password" autocomplete="off" autocapitalize="none" spellcheck="false"></label>
       <label class="field"><span class="caps">Your full name</span>
-        <input id="r-q" type="text" placeholder="e.g. Jane Example" autocapitalize="words" spellcheck="false" enterkeyhint="search"></label>
+        <input id="r-q" type="text" placeholder="e.g. Joseph Binney" autocapitalize="words" spellcheck="false" enterkeyhint="search"></label>
       <button class="btn" type="submit">Find my invitation</button>
       <p class="rnote" id="r-find-note" aria-live="polite"></p>
       <div class="pick" id="r-pick" hidden></div>
@@ -461,8 +462,8 @@
       <p class="rhello" id="r-hello"></p>
       <p class="rintro" id="r-lead"></p>
       <div id="r-guests"></div>
-      <label class="field"><span class="caps">A note for us · optional</span>
-        <textarea id="r-msg" maxlength="1000" placeholder="Questions, song requests, anything else…"></textarea></label>
+      <label class="field"><span class="caps">Any comments · optional</span>
+        <textarea id="r-msg" maxlength="1000" placeholder="Accessibility needs, questions, song requests…"></textarea></label>
       <p class="rcount" id="r-count" aria-live="polite"></p>
       <button class="btn" type="submit" id="r-send">Send our reply</button>
       <p class="rnote" id="r-form-note" aria-live="polite"></p>
@@ -515,13 +516,13 @@
     <div class="grid">
       <div class="blk">
         <h3>Getting here</h3>
-        <p>From London, the easiest way is the train from <strong>Paddington to Bath Spa</strong>, then a
-        10-minute taxi or Uber up to Combe Down.</p>
+        <p>From London, the easiest way is the train from <strong>Paddington to Bath Spa</strong>. There&rsquo;s
+        a taxi rank right outside the station, and it&rsquo;s about 10 minutes by taxi or Uber up to Combe Down.</p>
       </div>
       <div class="blk">
         <h3>On the day</h3>
         <p>The church and the house are both on Church Road, so after the ceremony we&rsquo;ll all walk
-        to The Garth together. It&rsquo;s 6 to 8 minutes on foot.</p>
+        to The Garth together. It&rsquo;s about 5 minutes on foot.</p>
       </div>
       <div class="blk wide">
         <h3>Where to stay</h3>
@@ -557,8 +558,8 @@
       </details>
       <details class="faq">
         <summary>What should I wear?</summary>
-        <div class="a"><p>For the wedding: smart, so suits and dresses, but not black tie.</p>
-        <p>For the evening drinks: summer smart casual.</p></div>
+        <div class="a"><p>Ceremony &amp; wedding breakfast: formal.</p>
+        <p>Evening drinks: formal or smart casual.</p></div>
       </details>
       <details class="faq">
         <summary>Can I bring a plus one?</summary>
@@ -574,6 +575,14 @@
         ceremony. There&rsquo;ll be plenty of time for photos at the house afterwards.</p></div>
       </details>
       <details class="faq">
+        <summary>Should I bring confetti?</summary>
+        <div class="a"><p>No need, we&rsquo;ll provide confetti.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Will there be toilets at the house?</summary>
+        <div class="a"><p>Yes, there will be temporary toilets outside for guests.</p></div>
+      </details>
+      <details class="faq">
         <summary>Should I bring a gift?</summary>
         <div class="a"><p><strong>Your presence at our wedding is the greatest present.</strong> Many of you
         are travelling and giving up a precious weekend to be with us, and that already means so much.</p>
@@ -583,7 +592,7 @@
       <details class="faq">
         <summary>Who do I contact on the day?</summary>
         <div class="a"><p>We&rsquo;ll have a wedding coordinator looking after everything on the day, so
-        please get in touch with her rather than us. We&rsquo;ll add her name and number here once
+        please get in touch with them rather than us. We&rsquo;ll add their name and number here once
         it&rsquo;s confirmed.</p></div>
       </details>
       <details class="faq">
@@ -727,15 +736,12 @@
         lastDay = e.day_key;
       }
       days += '<article class="event" data-ev="' + esc(k) + '"><h3>' + esc(e.name) + "</h3>" +
-        '<p class="meta caps">' + esc(e.time) + " · " +
+        '<p class="meta">' + 
           (e.map_url ? '<a href="' + esc(e.map_url) + '" target="_blank" rel="noopener">' + esc(e.venue) + "</a>" : esc(e.venue)) + "</p>" +
-        (parts(e.descr).intro ? '<p class="desc">' + esc(parts(e.descr).intro) + "</p>" : "") +
-        (parts(e.descr).times ? '<p class="times">' + esc(parts(e.descr).times) + "</p>" : "") +
+        (e.descr ? '<p class="times">' + esc(e.descr) + "</p>" : "") +
         '<p class="dress"><span class="caps">Dress code</span>' + esc(e.dress) + "</p></article>";
     });
-    $("icons").innerHTML = icons;
-    $("icons").style.gridTemplateColumns = "repeat(" + Math.max(keys.length, 1) + ",1fr)";
-    $("icons").style.maxWidth = (keys.length * 187) + "px";
+    $("icons").innerHTML = "";
     $("days").innerHTML = days + (lastDay !== null ? "</div>" : "");
   }
   function eventsFor(party){
@@ -787,14 +793,14 @@
     var note = $("r-find-note"), pick = $("r-pick");
     pick.hidden = true; pick.innerHTML = "";
     var pw = guestPw();
-    if (!pw) { note.className = "rnote err"; note.textContent = "Please enter the password from your invitation."; $("r-pw").focus(); return; }
+    if (!pw) { note.className = "rnote err"; note.textContent = "Please enter the password we shared with you."; $("r-pw").focus(); return; }
     note.className = "rnote"; note.textContent = "Looking…";
     rpc("rsvp_lookup", { q: q, pw: pw }).then(function(res){
       note.textContent = "";
       if (res && res.bad_password) {
         pwKnown(false);
         note.className = "rnote err";
-        note.textContent = "That password doesn’t look right. You’ll find it on your invitation.";
+        note.textContent = "That password doesn’t look right. Please check the one we shared with you.";
         $("r-pw").focus();
         return;
       }
@@ -802,16 +808,16 @@
       if (!res || !res.length) {
         note.textContent = /\s/.test(q.trim())
           ? "We couldn’t find that name. Try it exactly as it appears on your invitation. Still stuck? Message " + HOST_NAME + "."
-          : "Please type your full name, first and last (e.g. Jane Example).";
+          : "Please type your full name, first and last (e.g. Joseph Binney).";
         return;
       }
-      if (res.length === 1) return open(res[0]);
+      if (res.length === 1) return open(res[0], false, true);
       note.textContent = "Which invitation is yours?";
       res.forEach(function(p){
         var b = document.createElement("button");
         b.type = "button";
         b.textContent = p.guests.map(function(g){ return (g.first_name + " " + g.last_name).trim(); }).join(" & ");
-        b.onclick = function(){ open(p); };
+        b.onclick = function(){ open(p, false, true); };
         pick.appendChild(b);
       });
       pick.hidden = false;
@@ -821,12 +827,14 @@
     });
   }
 
-  function open(party, quiet){
+  /* first unlock lands on our note and photo, not the reply form */
+  function toWelcome(){ setTimeout(function(){ document.querySelector(".welcome").scrollIntoView({ behavior: "smooth" }); }, 60); }
+  function open(party, quiet, welcome){
     current = learn(party);
     store(STORE, party.party);
     personalise(party);
     var answered = party.guests.some(function(g){ return g.responded_at; });
-    if (answered && show.last !== "edit") return done(party, quiet);
+    if (answered && show.last !== "edit") { done(party, quiet || welcome); if (welcome) toWelcome(); return; }
     show.last = null;
     $("r-hello").textContent = "Hello, " + names(party) + ".";
     var many = party.guests.length > 1;
@@ -844,8 +852,8 @@
           '<label><input type="radio" name="' + n + '" value="0"' + (yes ? "" : " checked") + "><span>Regretfully declines</span></label>" +
           "</div></div>";
       });
-      html += '<label class="field"><span class="caps">' + (many ? esc(g.first_name) + "’s dietary requirements" : "Dietary requirements") + ' · optional</span>' +
-        '<input type="text" maxlength="300" data-diet placeholder="e.g. vegetarian, nut allergy" value="' + esc(g.dietary || "") + '"></label></div>';
+      html += '<label class="field"><span class="caps">' + (many ? esc(g.first_name) + "’s dietary or accessibility needs" : "Dietary or accessibility needs") + ' · optional</span>' +
+        '<input type="text" maxlength="300" data-diet placeholder="e.g. vegetarian, nut allergy, step-free access" value="' + esc(g.dietary || "") + '"></label></div>';
     });
     $("r-guests").innerHTML = html;
     $("r-guests").onchange = function(e){
@@ -857,7 +865,7 @@
     $("r-msg").value = msg || "";
     $("r-form-note").textContent = "";
     show("form");
-    if (!quiet) $("rsvp").scrollIntoView();
+    if (welcome) toWelcome(); else if (!quiet) $("rsvp").scrollIntoView();
   }
 
   function done(party, quiet){
@@ -880,7 +888,7 @@
         rows += "<div><span>" + EVENTS[ev].name + "</span><span>" +
           (g[ev] === true ? "Attending" : g[ev] === false ? "Not attending" : "No reply yet") + "</span></div>";
       });
-      if (g.dietary) rows += "<div><span>Dietary</span><span>" + esc(g.dietary) + "</span></div>";
+      if (g.dietary) rows += "<div><span>Dietary / access</span><span>" + esc(g.dietary) + "</span></div>";
     });
     $("r-sum").innerHTML = rows;
     $("r-cal").hidden = !anyYes;
@@ -921,7 +929,7 @@
     rpc("rsvp_submit", { p_party: current.party, answers: answers, p_message: $("r-msg").value, pw: guestPw() })
       .then(function(party){
         btn.disabled = false;
-        if (party && party.bad_password) { pwKnown(false); forget(); $("r-find-note").className = "rnote err"; $("r-find-note").textContent = "Please enter the password from your invitation again."; return; }
+        if (party && party.bad_password) { pwKnown(false); forget(); $("r-find-note").className = "rnote err"; $("r-find-note").textContent = "Please enter the password we shared with you again."; return; }
         note.textContent = ""; done(party);
       })
       .catch(function(){
@@ -959,9 +967,8 @@
       var e = EVENTS[ev];
       var num = function(t){ return t.replace(/[0-9]+/g, '<span class="num">$&</span>'); };
       html += '<div class="k-ev">' + (manyDays ? '<p class="d">' + num(e.day) + "</p>" : "") + "<p class=\"n\">" + e.name + "</p>" +
-        '<p class="m">' + num(e.time) + " · " + esc(e.venue) + "</p>" +
-        (e.address ? '<p class="ad"' + (e.map_url ? ' data-map="' + esc(e.map_url) + '"' : "") + "><span>" + esc(e.address) + (e.map_url ? " · View map" : "") + "</span></p>" : "") +
-        (parts(e.descr).times ? '<p class="ds">' + esc(parts(e.descr).times) + "</p>" : "") +
+        '<p class="ad"' + (e.map_url ? ' data-map="' + esc(e.map_url) + '"' : "") + "><span>" + esc(e.venue) + "</span></p>" +
+        (e.descr ? '<p class="ds">' + esc(e.descr) + "</p>" : "") +
         '<p class="dr">Dress code: ' + esc(e.dress) + "</p>" +
         "</div>";
     });
@@ -1032,7 +1039,7 @@
       if (res && res.length === 1) open(res[0], !linked);
     }).catch(function(){});
   } else if (linked) {
-    $("r-find-note").textContent = "Enter the password from your invitation to open it.";
+    $("r-find-note").textContent = "Enter the password we shared with you to open it.";
   }
 })();
 </script>
