@@ -286,7 +286,7 @@
   .rg .field .caps{font-size:13px}
   .steps{list-style:none; display:flex; justify-content:center; gap:0; margin:0 auto 40px; max-width:520px; font-size:9.5px; letter-spacing:.22em}
   .steps li{flex:1; padding:10px 4px 0; border-top:1px solid var(--hair); color:var(--soft); opacity:.55; counter-increment:stp}
-  .steps li::before{content:counter(stp, upper-roman) "  "; }
+  .steps li::before{content:counter(stp) "  "; }
   .steps{counter-reset:stp}
   .steps li.on{opacity:1; color:var(--dark); border-top:2px solid var(--dark); padding-top:9px}
   .steps li.past{opacity:.9}
@@ -341,6 +341,7 @@
   .hero .kicker{font-size:18px; letter-spacing:.2em}
   .names-art{margin:14px auto 0; line-height:0}
   .names-art img{width:min(84vw,500px); height:auto}
+  .nw{white-space:nowrap}
   .hero .when{margin-top:22px; font-size:17px; opacity:1}
   .hero-count{font-size:15px; opacity:.85}
   .hero-cta{background:var(--dark); color:var(--light); border:1.5px solid var(--dark); font-family:var(--hand);
@@ -433,7 +434,7 @@
     <div class="in">
       <p class="kicker caps">We&rsquo;re getting married</p>
       <h1 class="names-art"><img src="art/names-green.svg" alt="Ottilie &amp; Abhi" width="499" height="107"></h1>
-      <p class="when caps">22 May 2027 · Combe Down, Bath</p>
+      <p class="when caps">22 May 2027 · <span class="nw">Combe Down, Bath</span></p>
       <span class="hero-count caps" id="countdown"></span>
       <a class="hero-cta" id="hero-cta" href="#rsvp">Unlock your invite</a>
       <img class="hero-art" src="art/toast-green.svg" alt="" width="889" height="496">
@@ -633,7 +634,7 @@
 <footer class="dark">
   <div class="checks" aria-hidden="true"></div>
   <p class="foot-names"><img src="art/names-cream.svg" alt="Ottilie &amp; Abhi" width="499" height="107"></p>
-  <p class="caps">Combe Down, Bath · 22 May 2027</p>
+  <p class="caps"><span class="nw">Combe Down, Bath</span> · 22 May 2027</p>
 </footer>
 
 <!-- keepsake itinerary: drawn off-screen, turned into a PDF on request -->
@@ -641,7 +642,7 @@
   <div class="k-top">
     <img src="art/toast-cream.svg" alt="">
     <p class="k-names">Ottilie <em>&amp;</em> Abhi</p>
-    <p class="k-when">22 May 2027 · Combe Down, Bath</p>
+    <p class="k-when">22 May 2027 · <span class="nw">Combe Down, Bath</span></p>
   </div>
   <div class="k-body">
     <p class="k-for">An itinerary for</p>
