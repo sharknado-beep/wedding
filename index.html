@@ -121,6 +121,8 @@
 
   /* ═══ locked until an invitation is found ═══ */
   body.locked #schedule, body.locked #travel, body.locked #faq, body.locked [data-gated]{display:none!important}
+  /* evening-only invitations: hide text about the ceremony, show the evening version */
+  body.eve [data-for="ceremony"], body:not(.eve) [data-for="eve"]{display:none!important}
   .hero-cta{display:block; width:100%; max-width:440px; margin:34px auto 0; box-sizing:border-box; text-align:center; padding:17px 30px; border:1px solid var(--light);
     background:var(--light); color:var(--dark); text-decoration:none; text-shadow:none;
     font-size:16px; letter-spacing:.24em; text-transform:uppercase; font-weight:600; transition:.2s}
@@ -451,7 +453,9 @@
           <figure class="us"><img data-src="photos/ring.jpg" alt="Ottilie showing her engagement ring" width="800" height="1000"></figure>
         </div>
       </div>
-      <p class="body">We would love for you to join us in Combe Down. We&rsquo;ll be getting married at
+      <p class="body" data-for="eve">We would love for you to join us in Combe Down for evening drinks in the
+      garden at Ott&rsquo;s family home, with music, nibbles and the people we love most.</p>
+      <p class="body" data-for="ceremony">We would love for you to join us in Combe Down. We&rsquo;ll be getting married at
       the village church and then celebrating in the garden at Ott&rsquo;s family home, with good food,
       drinks and the people we love most.</p>
       <p class="body">We can&rsquo;t wait to see you there.</p>
@@ -547,7 +551,7 @@
         <p>From London, the easiest way is the train from <strong>Paddington to Bath Spa</strong>. There&rsquo;s
         a taxi rank right outside the station, and it&rsquo;s about 10 minutes by taxi or Uber up to Combe Down.</p>
       </div>
-      <div class="blk">
+      <div class="blk" data-for="ceremony">
         <h3>On the day</h3>
         <p>The church and the house are both on Church Road, so after the ceremony we&rsquo;ll all walk
         to The Garth together. It&rsquo;s about 5 minutes on foot.</p>
@@ -555,15 +559,16 @@
       <div class="blk wide">
         <h3>Where to stay</h3>
         <p>The <strong>King William</strong> pub has a small number of rooms and is the closest place to
-        stay, within walking distance of both venues.</p>
+        stay, within walking distance of <span data-for="ceremony">both venues</span><span data-for="eve">The Garth</span>.</p>
         <p>Otherwise there are plenty of hotels and Airbnbs in Bath, a short taxi ride away. You don&rsquo;t
         need to rush, but booking early helps.</p>
       </div>
       <div class="blk wide">
         <h3>The weather</h3>
-        <p>Late May in Somerset can be warm or showery. The wedding breakfast is in a marquee, so
+        <p>Late May in Somerset can be warm or showery. <span data-for="ceremony">The wedding breakfast is in a marquee, so
         we&rsquo;ll be covered whatever the weather, but the drinks are in the garden, so bring a layer
-        for the evening.</p>
+        for the evening.</span><span data-for="eve">The drinks are in the garden, so bring a layer
+        for the evening.</span></p>
       </div>
     </div>
   </div>
@@ -586,7 +591,7 @@
       </details>
       <details class="faq">
         <summary>What should I wear?</summary>
-        <div class="a"><p>Ceremony &amp; wedding breakfast: formal.</p>
+        <div class="a"><p data-for="ceremony">Ceremony &amp; wedding breakfast: formal.</p>
         <p>Evening drinks: formal or smart casual.</p></div>
       </details>
       <details class="faq">
@@ -597,12 +602,12 @@
         <summary>Are children invited?</summary>
         <div class="a"><p>Little ones named on your invitation are very welcome.</p></div>
       </details>
-      <details class="faq">
+      <details class="faq" data-for="ceremony">
         <summary>Can I take photos during the ceremony?</summary>
         <div class="a"><p>We&rsquo;d love you to be fully present, so please keep phones away during the
         ceremony. There&rsquo;ll be plenty of time for photos at the house afterwards.</p></div>
       </details>
-      <details class="faq">
+      <details class="faq" data-for="ceremony">
         <summary>Should I bring confetti?</summary>
         <div class="a"><p>No need, we&rsquo;ll provide confetti.</p></div>
       </details>
@@ -788,6 +793,7 @@
   }
   function personalise(party){
     document.body.classList.toggle("locked", !party);
+    document.body.classList.toggle("eve", !!party && eventsFor(party).indexOf("ceremony") < 0);
     if (party) document.querySelectorAll("img[data-src]").forEach(function(im){ im.src = im.getAttribute("data-src"); im.removeAttribute("data-src"); });
     renderSchedule(party ? eventsFor(party) : []);
     var y = $("yours");
